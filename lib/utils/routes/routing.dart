@@ -5,6 +5,8 @@ import 'package:jobisto/app/tab/route/tab_route.dart';
 import 'package:jobisto/app/tab_orders/route/order_route.dart';
 import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
 
+import '../../app/tab_seller/route/tab_seller_route.dart';
+
 class Routes {
   Map<String, WidgetBuilder> routes = {
     PresentationRoute.introRoute:(context) => PresentationRoute.introChild,
@@ -14,6 +16,8 @@ class Routes {
     AuthRoute.changePasswordRoute:(context) => AuthRoute.changePasswordChild,
     TabRoute.tabRoute:(context) => TabRoute.tabChild,
     TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
+    TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,
+    TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild
     TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild
   };
 }
