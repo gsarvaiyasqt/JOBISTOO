@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_seller/components/custom_search_field.dart';
 import 'package:jobisto/app/tab_seller/components/managed_jobs_custom_List.dart';
-import 'package:jobisto/base/base.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/utils/utils.dart';
 
