@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobisto/app/auth/route/auth_route.dart';
 import 'package:jobisto/app/presentation/route/lending_route.dart';
 import 'package:jobisto/app/tab/route/tab_route.dart';
+import 'package:jobisto/app/tab_orders/route/order_route.dart';
 import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
 
 class Routes {
@@ -12,6 +13,7 @@ class Routes {
     AuthRoute.forgetPasswordRoute:(context) => AuthRoute.forgetPasswordChild,
     AuthRoute.changePasswordRoute:(context) => AuthRoute.changePasswordChild,
     TabRoute.tabRoute:(context) => TabRoute.tabChild,
-    TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild
+    TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
+    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild
   };
 }
