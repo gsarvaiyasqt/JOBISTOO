@@ -17,7 +17,7 @@ class Routes {
     TabRoute.tabRoute:(context) => TabRoute.tabChild,
     TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
     TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,
-    TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild
+    TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild,
     TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild
   };
 }

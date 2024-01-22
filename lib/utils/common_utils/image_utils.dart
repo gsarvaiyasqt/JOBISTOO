@@ -39,7 +39,7 @@ class IconImageClass{
   Widget get linkIcon => const CustomSvgPictures.asset("$iconPath/link.svg", fit: BoxFit.cover);
   Widget get locationIcon => const CustomSvgPictures.asset("$iconPath/location.svg", fit: BoxFit.cover);
   Widget get messageChatIcon => const CustomSvgPictures.asset("$iconPath/message_chat.svg", fit: BoxFit.cover);
-  Widget get plumbingProfileIcon => const CustomSvgPictures.asset("$iconPath/plumbing_profile.svg", fit: BoxFit.cover);
+  Widget get plumbingProfileIcon => const CustomSvgPictures.asset("$iconPath/plumbing_profile.svg", fit: BoxFit.contain);
   Widget get processIcon => const CustomSvgPictures.asset("$iconPath/Process.svg", fit: BoxFit.cover);
   Widget get rejectedIcon => const CustomSvgPictures.asset("$iconPath/rejected.svg", fit: BoxFit.cover);
   Widget get reviewStarIcon => const CustomSvgPictures.asset("$iconPath/review_star.svg", fit: BoxFit.cover);
