@@ -27,6 +27,7 @@ class IconImageClass{
   Widget get acceptedIcon => const CustomSvgPictures.asset("$iconPath/accepted.svg", fit: BoxFit.cover);
   Widget get swipeIcon => const CustomSvgPictures.asset("$iconPath/swipe.svg", fit: BoxFit.cover);
   Widget get backArrowIcon => CustomSvgPictures.asset("$iconPath/back_arrow.svg", fit: BoxFit.cover,height: 24.sp,width: 24.sp,);
+  Widget get edit => CustomSvgPictures.asset("$iconPath/edit.svg", fit: BoxFit.cover,height: 24.sp,width: 24.sp,);
   Widget get calendarIcon => const CustomSvgPictures.asset("$iconPath/calender.svg", fit: BoxFit.cover);
   Widget get cancelIcon => const CustomSvgPictures.asset("$iconPath/cancel.svg", fit: BoxFit.cover);
   Widget get closeEyeIcon => const CustomSvgPictures.asset("$iconPath/close_eye.svg", fit: BoxFit.cover);
