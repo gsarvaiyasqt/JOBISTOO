@@ -9,6 +9,57 @@ extension CustomTextStyle on TextStyle{
     fontWeight: FontWeight.w300
   );
 
+  static TextStyle get primaryTextColorFont22W600 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 22.sp,
+      fontWeight: FontWeight.w600
+  );
+
+  static TextStyle get primaryTextColorFont20W600 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w600
+  );
+
+  static TextStyle get secondaryTextColorFont16W600 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w600
+  );
+
+
+
+  static TextStyle get secondaryTextColorFont20W400 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get secondaryTextColorFont16W400 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get primaryTextColorFont16W400 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get primaryTextColorFont14W400 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get primaryTextColorFont18W400 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w400
+  );
+
+
   static TextStyle get yellowSemiBoldFont18Style => TextStyle(
     color: kPrimaryColor,
     fontSize: 18.sp,
