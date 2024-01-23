@@ -6,6 +6,8 @@ import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
 
+import '../../menu/route/menu_route.dart';
+
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
@@ -14,6 +16,9 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  int? currentIndex;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,9 +79,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
               
                              InkWell(
                                onTap: () {
-                                 if(index == 0){
-                                   TabSettingsRoute.goToBecomeAJobberPage(context);
+
+                                 setState(() {
+                                 currentIndex = index;
+                                 });
+
+
+                                 switch(currentIndex){
+                                   case 0:
+                                     MenuRoute.goToBecomeAJobberPage(context);
+                                     return ;
+
+                                   case 1:
+                                     MenuRoute.goToMenuSellerPage(context);
+                                     return ;
+
+                                   case 2:
+                                     MenuRoute.goToMenuBusinessPage(context);
+                                     return ;
                                  }
+
+
+
                                },
                                child: Padding(
                                  padding: EdgeInsets.symmetric(vertical: 22.sp),
