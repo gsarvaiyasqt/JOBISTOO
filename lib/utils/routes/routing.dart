@@ -19,6 +19,7 @@ class Routes {
     TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
     TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
     TabOrderRoute.jobberProfileRoute : (context) => TabOrderRoute.myJobberProfileChild,
+    TabOrderRoute.jobberTalkRoute : (context) => TabOrderRoute.jobberTalkChild,
     MenuRoute.jobberBusinessRoute:(context) => MenuRoute.jobberServiceChild,
     MenuRoute.jobberServiceRoute:(context) => MenuRoute.jobberBusinessChild,
     TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,

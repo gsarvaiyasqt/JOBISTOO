@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobisto/app/tab_orders/view/job_talk_page.dart';
 
 import '../../../utils/common_utils/enums.dart';
 import '../view/my_jobber_profile_page.dart';
@@ -10,16 +11,24 @@ class TabOrderRoute{
 
   static String jobberProfileRoute = '/jobber_profile_route';
 
+  static String jobberTalkRoute = '/jobber_talk_route';
+
   static Widget get becomeAJobberChild => const OrderDetailScreen();
 
   static Widget get myJobberProfileChild => const MyJobberProfilePage();
+
+  static Widget get jobberTalkChild => const JOBTalkPage();
 
   static goToBecomeAJobberPage(BuildContext context,[JobsServiceData? jobsServiceData]){
     Navigator.of(context).pushNamed(orderDetailRoute,arguments: jobsServiceData);
   }
 
-  static goToJobberProfilePage(BuildContext context){
-    Navigator.of(context).pushNamed(jobberProfileRoute);
+  static goToJobberProfilePage(BuildContext context,[JobsServiceData? jobsServiceData]){
+    Navigator.of(context).pushNamed(jobberProfileRoute,arguments: jobsServiceData);
+  }
+
+  static goToJobTalkPage(BuildContext context){
+    Navigator.of(context).pushNamed(jobberTalkRoute);
   }
 
 }
@@ -29,7 +38,8 @@ class JobsServiceData{
   STATUSTYPE? statustype;
   JobsServiceData({this.statustype,this.jobstype});
 
-
 }
+
+
 
 

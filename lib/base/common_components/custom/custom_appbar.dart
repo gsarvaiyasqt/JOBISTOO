@@ -11,12 +11,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
     return Container(
       color: kBlackColor,
       alignment: Alignment.center,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
           const CustomAppbarPrefixIcon(),
-          SizedBox(width: 24.sp),
-          Expanded(child: Text(title ?? "",style: CustomTextStyle.primaryTextColorFont20W600,overflow: TextOverflow.ellipsis,maxLines: 2,))
+          Text(title ?? "",style: CustomTextStyle.primaryTextColorFont20W600,overflow: TextOverflow.ellipsis,maxLines: 1)
         ],
       ),
     );

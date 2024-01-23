@@ -92,6 +92,13 @@ extension CustomTextStyle on TextStyle{
       fontWeight: FontWeight.w300
   );
 
+
+  static TextStyle get primaryTextColorFont16W300 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w300
+  );
+
   static TextStyle get primaryTextColorFont12W400 => TextStyle(
       color: kTextPrimaryColor,
       fontSize: 12.sp,
