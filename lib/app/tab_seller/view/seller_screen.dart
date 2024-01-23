@@ -4,6 +4,8 @@ import 'package:jobisto/app/tab_seller/components/managed_jobs_custom_List.dart'
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/utils/utils.dart';
 
+import '../route/tab_seller_route.dart';
+
 class SellerScreen extends StatefulWidget {
   const SellerScreen({super.key});
 
@@ -26,16 +28,21 @@ class _SellerScreenState extends State<SellerScreen> {
 
             Expanded(child: Text("Managed JOBS",style: CustomTextStyle.semiBoldFont20Style,textAlign: TextAlign.center,)),
 
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                border: Border.all(color: kLightGrayColor)
+            InkWell(
+              onTap: () {
+                TabSellerRoute.goToManageJobPage(context);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(color: kLightGrayColor)
+                ),
+                padding: EdgeInsets.all(8.sp),
+                child: SizedBox(
+                    height: 24.sp,
+                    width: 24.sp,
+                    child: ImageUtil.iconImageClass.managedJobsIcon),
               ),
-              padding: EdgeInsets.all(8.sp),
-              child: SizedBox(
-                  height: 24.sp,
-                  width: 24.sp,
-                  child: ImageUtil.iconImageClass.managedJobsIcon),
             )
           ],
         ),
@@ -54,14 +61,6 @@ class _SellerScreenState extends State<SellerScreen> {
                   imageIcon: "assets/images/icons/search.svg",
                 ),
 
-                /*CustomRoundedTextField(
-                    controller: searchJobsController,
-                    hint: "Search Jobs",
-                  suffix: SizedBox(
-                      height: 24.sp,
-                      width: 24.sp,
-                      child: ImageUtil.iconImageClass.searchIcon),
-                ),*/
                 
                 ManagedJobsCustomList()
               ],

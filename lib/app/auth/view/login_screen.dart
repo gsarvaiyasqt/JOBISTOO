@@ -18,8 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController mobileController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  FocusNode mobile = FocusNode();
-  FocusNode password = FocusNode();
+  FocusNode mobileNode = FocusNode();
+  FocusNode passwordNode = FocusNode();
 
   bool togglePassword = true;
 
@@ -58,14 +58,14 @@ class _LoginScreenState extends State<LoginScreen> {
             
                     CustomTextField(
                       name: "Mobile Number",
+                      focusNode: mobileNode,
                       textInputAction: TextInputAction.next,
                       inputType: TextInputType.number,
                       controller: mobileController,
                       hint: "Enter your Mobile Number",
-                    /*  focusNode: mobile,
-                      onEditingComplete:() {
-                        password.requestFocus();
-                      },*/
+                      onEditingComplete: () {
+                        FocusScope.of(context).requestFocus(passwordNode);
+                      },
                       isOptional: false,
                     ),
             
@@ -75,7 +75,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       name: "Password",
                       controller: passwordController,
                       textInputAction: TextInputAction.done,
-                    /*  focusNode: password,*/
+                      focusNode: passwordNode,
+                      onEditingComplete: () {
+                        FocusScope.of(context).unfocus();
+                      },
                       hint: "Enter Password",
                       isOptional: false,
                       isSecure: togglePassword ? true : false,
