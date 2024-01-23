@@ -6,6 +6,8 @@ const int primaryColorValue = 0xffFEBE73;
 
 const Color kPrimaryColor = Color(0xffFEBE73);
 const Color kSecondaryColor = Color(0xffFFFFFF);
+const Color kTextSecondaryColor = Color(0xffFEBE73);
+const Color kTextPrimaryColor = Color(0xffFFFFFF);
 const Color kLowWhiteColor = Color(0xffA4A4A4);
 const Color kLightGrayColor = Color(0xff6F778B);
 const Color kDarkGreyColor = Color(0xff191C26);
@@ -13,6 +15,7 @@ const Color kBlackColor = Color(0xff000000);
 const Color kRedColor = Color(0xffF44545);
 const Color kButtonColor = Color(0xff6F778B);
 const Color kTabColor = Color(0xffA4A4A4);
+const Color kYellowColor = Color(0xffF9A600);
 
 final primarySwatchColor = MaterialColor(primaryColorValue, <int, Color>{
   50: const Color(primaryColorValue).withOpacity(0.05),//10%
