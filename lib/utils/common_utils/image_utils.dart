@@ -119,6 +119,7 @@ class CustomSvgPictures extends StatelessWidget {
       width: width,
       fit: fit,
       alignment: alignment,
+      // colorFilter: ColorFilter.mode(color ==  ? null : color , BlendMode.srcIn),
       color: color,
       placeholderBuilder: (context) {
         return const SizedBox.shrink();

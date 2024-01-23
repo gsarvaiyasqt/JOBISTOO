@@ -4,9 +4,10 @@ import 'package:jobisto/app/tab_home/domain/dummy_models/jobs_model.dart';
 import 'package:jobisto/utils/utils.dart';
 
 class TopJobsCustomGrid extends StatefulWidget {
+  final JobsClass? jobsData;
   final String? icon;
   final String? name;
-  const TopJobsCustomGrid({super.key, this.icon, this.name});
+  const TopJobsCustomGrid({super.key, this.icon, this.name, this.jobsData});
 
   @override
   State<TopJobsCustomGrid> createState() => _TopJobsCustomGridState();
@@ -30,11 +31,11 @@ class _TopJobsCustomGridState extends State<TopJobsCustomGrid> {
             SizedBox(
               height: 32.sp,
               width: 32.sp,
-              child: SvgPicture.asset("$iconPath${widget.icon}"),
+              child: SvgPicture.asset("$iconPath${widget.jobsData?.icon}"),
             ),
 
 
-            Text(widget.name ?? "",style: CustomTextStyle.regularFont14Style,)
+            Text(widget.jobsData?.text ?? "",style: CustomTextStyle.regularFont14Style,)
           ],
         ),
       ),

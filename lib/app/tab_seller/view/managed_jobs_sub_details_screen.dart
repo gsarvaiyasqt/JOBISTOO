@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
+import 'package:jobisto/app/tab_seller/route/tab_seller_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
@@ -192,6 +193,9 @@ class _ManagedJobsSubDetailsScreenState extends State<ManagedJobsSubDetailsScree
                 child: SizedBox(
                   height: 54.sp,
                   child: CustomButton(
+                    onTap: () {
+                      TabSellerRoute.goToJobsApplyPage(context);
+                    },
                     btnText: "Apply Now",
                     textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: Colors.black),
                   ),

@@ -1,6 +1,6 @@
 part of base;
 
-class CustomTextField extends StatefulWidget {
+class CustomDescriptionTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hint;
   final Widget? suffix;
@@ -9,23 +9,25 @@ class CustomTextField extends StatefulWidget {
   final String? emptyMessage;
   final bool? isSecure;
   final String? regex;
+  final int? maxLine;
+  final int? minLine;
   final VoidCallback? onEditingComplete;
   final FocusNode? focusNode;
   final TextInputAction? textInputAction;
   final String? validationMessage;
   final TextInputType? inputType;
-  const CustomTextField({Key? key, required this.controller,
+  const CustomDescriptionTextField({Key? key, required this.controller,
     bool? isOptional,
     required this.hint, this.suffix,
-    this.isSecure, this.inputType, this.name, this.emptyMessage, this.regex, this.validationMessage, this.textInputAction, this.focusNode, this.onEditingComplete}) :
+    this.isSecure, this.inputType, this.name, this.emptyMessage, this.regex, this.validationMessage, this.textInputAction, this.focusNode, this.onEditingComplete, this.maxLine, this.minLine}) :
         isOptional = isOptional ?? true,
         super(key: key);
 
   @override
-  State<CustomTextField> createState() => _CustomDescriptionTextField();
+  State<CustomDescriptionTextField> createState() => _CustomRoundedTextFieldState();
 }
 
-class _CustomDescriptionTextField extends State<CustomTextField> {
+class _CustomRoundedTextFieldState extends State<CustomDescriptionTextField> {
   String? error;
   String? validator(String? value){
     if (widget.isOptional! && (value == null || value.isTrimEmpty)) return null;
@@ -44,7 +46,6 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
     return  Column(
       children: [
         Container(
-          height: 50,
           alignment: Alignment.center,
           decoration: BoxDecoration(
               border: Border.all(color: kLightGrayColor,width: 1.sp),
@@ -57,6 +58,8 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      minLines: widget.minLine,
+                      maxLines: widget.maxLine,
                       cursorColor: kPrimaryColor,
                       focusNode: widget.focusNode,
                       onEditingComplete: widget.onEditingComplete,
@@ -80,7 +83,7 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
                           errorStyle: const TextStyle(height: 0,color: Colors.transparent,fontSize: 0),
                           border: InputBorder.none,
                           hintText: "",
-                          contentPadding: EdgeInsets.only(left: 15.sp)
+                          contentPadding: EdgeInsets.only(left: 15.sp,top: 5.sp)
                       ),
                     ),
                   ),
@@ -93,18 +96,21 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
                 Center(child: Row(
                   children: [
                     SizedBox(width: 15.sp),
-                    Text.rich(TextSpan(
-                        children: [
-                          TextSpan(text: "${widget.hint} ", style: CustomTextStyle.regularFont16Style,
-                              children: [
-                                if(widget.isOptional == false)
-                                  TextSpan(text: "*",style: TextStyle(color: Colors.red))
-                              ]
-                          ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.sp),
+                      child: Text.rich(TextSpan(
+                          children: [
+                            TextSpan(text: "${widget.hint} ", style: CustomTextStyle.regularFont16Style,
+                                children: [
+                                  if(widget.isOptional == false)
+                                    TextSpan(text: "*",style: TextStyle(color: Colors.red))
+                                ]
+                            ),
 
 
-                        ]
-                    )),
+                          ]
+                      )),
+                    ),
                   ],)),
 
             ],
