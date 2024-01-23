@@ -3,9 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobisto/app/tab_settings/components/custom_settings_background.dart';
 import 'package:jobisto/app/tab_settings/domain/models/settings_model.dart';
 import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
-import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
-import 'package:jobisto/utils/routes/routing.dart';
 import 'package:jobisto/utils/utils.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -104,7 +102,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                ),
                              ),
               
-                             if(index != 3)
+                             if(SettingsClass.settingsList.length - 1 != index)
                                Divider(
                                  color: kSecondaryColor.withOpacity(0.10),
                                  height: 0,
