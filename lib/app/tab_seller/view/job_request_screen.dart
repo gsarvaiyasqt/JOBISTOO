@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobisto/app/tab_seller/components/services_list.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
@@ -110,12 +109,9 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
                         shrinkWrap: true,
                         itemCount: ServiceClass.serviceList.length,
                         itemBuilder: (context, index) {
-                          final serviceList = ServiceClass.serviceList[index];
+                          final serviceData = ServiceClass.serviceList[index];
                         return  ServicesList(
-                          price: serviceList.price.toString() ??  "-",
-                          description: serviceList.description,
-                          serviceName: serviceList.serviceName,
-                          image: serviceList.img,
+                          serviceData: serviceData,
                           totalLength: ServiceClass.serviceList,
                           index: index,
                         );

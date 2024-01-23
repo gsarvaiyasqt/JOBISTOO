@@ -128,10 +128,9 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.symmetric(horizontal: 20.sp,vertical: 15.sp),
               itemCount: JobsClass.jobsList.length,
               itemBuilder: (context, index) {
-                final jobs = JobsClass.jobsList[index];
+                final jobsData = JobsClass.jobsList[index];
                 return TopJobsCustomGrid(
-                  icon: jobs.icon,
-                  name: jobs.text,
+                 jobsData: jobsData,
                 );
               },
             ),
