@@ -13,6 +13,7 @@ const Color kLightGrayColor = Color(0xff6F778B);
 const Color kDarkGreyColor = Color(0xff191C26);
 const Color kBlackColor = Color(0xff000000);
 const Color kRedColor = Color(0xffF44545);
+const Color kLightGreenColor = Color(0xff73FE79);
 const Color kButtonColor = Color(0xff6F778B);
 const Color kTabColor = Color(0xffA4A4A4);
 

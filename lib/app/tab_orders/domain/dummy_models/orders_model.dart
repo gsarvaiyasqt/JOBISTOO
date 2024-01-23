@@ -1,3 +1,7 @@
+import 'package:jobisto/utils/common_utils/enums.dart';
+
+import '../../route/order_route.dart';
+
 class OrdersClass{
   String? request;
   String? profilePic;
@@ -5,15 +9,19 @@ class OrdersClass{
   String? category;
   num? price;
   String? date;
+  JobsServiceData? jobsServiceData;
 
-  OrdersClass({this.request,this.profilePic,this.name,this.category,this.price,this.date});
+  OrdersClass({this.request,this.profilePic,this.name,this.category,this.price,this.date,this.jobsServiceData});
 
   static List<OrdersClass> requestList = [
     OrdersClass(
       request: "Requested for",
       category: "Plumbing",
       price: 50.00,
-      date: "1 Nov ‘23"
+      jobsServiceData: JobsServiceData(
+        jobstype: JOBSTYPE.BUSINESS
+      ),
+      date: "1 Nov ‘23",
     ),
 
     OrdersClass(
@@ -22,6 +30,10 @@ class OrdersClass{
         name: "Jabari Osei",
         category: "AC Service",
         price: 45.00,
+        jobsServiceData: JobsServiceData(
+          jobstype: JOBSTYPE.JOBS,
+          statustype: STATUSTYPE.PENDING
+        ),
         date: "5 Nov ‘23"
     ),
 
@@ -31,6 +43,10 @@ class OrdersClass{
         name: "Rox Hardware",
         category: "AC Service",
         price: 99.00,
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         date: "23 Nov ‘23"
     ),
 
