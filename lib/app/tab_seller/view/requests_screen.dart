@@ -29,7 +29,7 @@ class _RequestScreenState extends State<RequestScreen> {
 
               :
 
-              null;
+                  TabSellerRoute.goToJobRequestPage(context);
             },
             child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.sp,vertical: 12.sp),
@@ -78,6 +78,8 @@ class _RequestScreenState extends State<RequestScreen> {
                     Row(
                       children: [
 
+                        if(requestList.serviceNum != null)
+
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40.sp),
@@ -98,7 +100,11 @@ class _RequestScreenState extends State<RequestScreen> {
                           ),
                         ),
 
-                        SizedBox(width: 10.sp,),
+                        if(requestList.productNum != null)
+
+                          SizedBox(width: 10.sp,),
+
+                        if(requestList.productNum != null)
 
                         Container(
                           decoration: BoxDecoration(

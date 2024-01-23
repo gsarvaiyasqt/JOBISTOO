@@ -9,13 +9,15 @@ class CustomTextField extends StatefulWidget {
   final String? emptyMessage;
   final bool? isSecure;
   final String? regex;
+  final VoidCallback? onEditingComplete;
+  final FocusNode? focusNode;
   final TextInputAction? textInputAction;
   final String? validationMessage;
   final TextInputType? inputType;
   const CustomTextField({Key? key, required this.controller,
     bool? isOptional,
     required this.hint, this.suffix,
-    this.isSecure, this.inputType, this.name, this.emptyMessage, this.regex, this.validationMessage, this.textInputAction}) :
+    this.isSecure, this.inputType, this.name, this.emptyMessage, this.regex, this.validationMessage, this.textInputAction, this.focusNode, this.onEditingComplete}) :
         isOptional = isOptional ?? true,
         super(key: key);
 
@@ -56,6 +58,8 @@ class _CustomRoundedTextFieldState extends State<CustomTextField> {
                   Expanded(
                     child: TextFormField(
                       cursorColor: kPrimaryColor,
+                      focusNode: widget.focusNode,
+                      onEditingComplete: widget.onEditingComplete,
                       style: CustomTextStyle.lightTextFieldStyle,
                       keyboardType: widget.inputType,
                       obscureText: widget.isSecure ?? false,

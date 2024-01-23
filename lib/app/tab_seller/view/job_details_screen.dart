@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
 import 'package:jobisto/app/tab_seller/components/custom_gridview_job_details.dart';
-import 'package:jobisto/app/tab_seller/domain/dummy_models/job_details_model.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
+import 'package:jobisto/base/common_components/custom/custom_message_button.dart';
 import 'package:jobisto/utils/utils.dart';
-
 import '../../tab_orders/domain/dummy_models/skilles_model.dart';
 
 class JobDetailsScreen extends StatefulWidget {
@@ -52,7 +49,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           SizedBox(
                             height: 24.sp,
                             width: 24.sp,
-                            child: ImageUtil.iconImageClass.starIcon,
+                            child: ImageUtil.iconImageClass.edit,
                           )
                         ],
                       ),
@@ -242,25 +239,9 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                 ),
               ),
 
-              Container(
+
+              CustomMessageButton(
                 margin: EdgeInsets.only(bottom: 55.sp,right: 20.sp),
-                padding: EdgeInsets.all(15.sp),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      // offset: Offset(5, 10),
-                      color: kPrimaryColor,
-                      blurRadius: 30.sp
-                    )
-                  ],
-                  color: kPrimaryColor,
-                  shape: BoxShape.circle,
-                ),
-                child: SizedBox(
-                  height: 30.sp,
-                  width: 30.sp,
-                  child: ImageUtil.iconImageClass.messageChatIcon,
-                ),
               )
             ],
           ),

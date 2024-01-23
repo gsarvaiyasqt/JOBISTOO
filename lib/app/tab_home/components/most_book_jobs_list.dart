@@ -3,7 +3,9 @@ import 'package:jobisto/app/tab_home/domain/dummy_models/jobs_model.dart';
 import 'package:jobisto/utils/utils.dart';
 
 class CustomMostBookJobsList extends StatefulWidget {
-  const CustomMostBookJobsList({super.key});
+  final String? icon;
+  final String? name;
+  const CustomMostBookJobsList({super.key, this.icon, this.name});
 
   @override
   State<CustomMostBookJobsList> createState() => _CustomMostBookJobsListState();
@@ -12,32 +14,23 @@ class CustomMostBookJobsList extends StatefulWidget {
 class _CustomMostBookJobsListState extends State<CustomMostBookJobsList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(left: 12),
-      height: 145.sp,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: JobsClass.mostBookedJobList.length,
-        itemBuilder: (context, index) {
-          final mostBookedJobs = JobsClass.mostBookedJobList[index];
-          return Padding(
-            padding: EdgeInsets.only(right: 12.sp),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+    return Padding(
+      padding: EdgeInsets.only(right: 12.sp),
+      child: Column(
 
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.sp),
-                  child: Image.asset("$dummyImgPath${mostBookedJobs.icon}",height: 92.sp,width: 150.sp,fit: BoxFit.cover,),
-                ),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
 
-                SizedBox(height: 12.sp,),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.sp),
+            child: Image.asset("$dummyImgPath${widget.icon}",height: 92.sp,width: 150.sp,fit: BoxFit.cover,),
+          ),
 
-                Text(mostBookedJobs.text ?? "",style: CustomTextStyle.regularFont14Style)
-              ],
-            ),
-          );
-        },),
+          SizedBox(height: 5.sp,),
+
+          Text(widget.name ?? "",style: CustomTextStyle.regularFont14Style)
+        ],
+      ),
     );
   }
 }

@@ -18,6 +18,8 @@ class Routes {
     TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
     TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,
     TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild,
-    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild
+    TabSellerRoute.jobRequestScreenRoute:(context) => TabSellerRoute.jobRequestScreenChild,
+    TabSellerRoute.managedJobSubDetailsScreenRoute:(context) => TabSellerRoute.managedJobSubDetailsChild,
+    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
   };
 }

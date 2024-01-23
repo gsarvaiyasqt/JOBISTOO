@@ -63,8 +63,10 @@ class IconImageClass{
   Widget get searchIcon => const CustomSvgPictures.asset("$iconPath/search.svg",fit: BoxFit.cover,);
   Widget get nextArrowIcon => const CustomSvgPictures.asset("$iconPath/next_arrow.svg",fit: BoxFit.cover,);
   Widget get logoutIcon => const CustomSvgPictures.asset("$iconPath/logoutt.svg",fit: BoxFit.cover,color: Color(0xffffffff),);
-  Widget get deleteAccountIcon =>  CustomSvgPictures.asset("$iconPath/deleteAccountIcon.svg",fit: BoxFit.cover,);
-  Widget get delete => CustomSvgPictures.asset("$iconPath/delete_all.svg",fit: BoxFit.cover,);
+  Widget get deleteAccountIcon =>  const CustomSvgPictures.asset("$iconPath/deleteAccountIcon.svg",fit: BoxFit.cover,);
+  Widget get delete => const CustomSvgPictures.asset("$iconPath/delete_all.svg",fit: BoxFit.cover,);
+
+
 
 
 }
