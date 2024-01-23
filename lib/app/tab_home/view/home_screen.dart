@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:jobisto/app/tab_home/components/most_book_jobs_list.dart';
 import 'package:jobisto/app/tab_home/components/quick_home_repairs_list.dart';
 import 'package:jobisto/app/tab_home/components/top_jobs_custom_grid.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_info_title.dart';
 import 'package:jobisto/utils/utils.dart';
+
+import '../domain/dummy_models/jobs_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -112,8 +115,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   firstText: "Top JOBs",
                   secondText: "See All",
                 ),
-            
-                TopJobsCustomGrid(),
+
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 15.sp,
+                  mainAxisSpacing: 10.sp,
+                  childAspectRatio: 1.3
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 20.sp,vertical: 15.sp),
+              itemCount: JobsClass.jobsList.length,
+              itemBuilder: (context, index) {
+                final jobs = JobsClass.jobsList[index];
+                return TopJobsCustomGrid(
+                  icon: jobs.icon,
+                  name: jobs.text,
+                );
+              },
+            ),
             
                 SizedBox(height: 15.sp,),
             
@@ -123,8 +144,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
             
                 SizedBox(height: 15.sp,),
-            
-                CustomMostBookJobsList(),
+
+                Container(
+                  height: 144.sp,
+                  child: ListView.builder(
+                    padding: EdgeInsets.only(left: 20.sp),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: JobsClass.mostBookedJobList.length,
+                    itemBuilder: (context, index) {
+                      final mostBookedJobs = JobsClass.mostBookedJobList[index];
+                      return CustomMostBookJobsList(
+                        icon: mostBookedJobs.icon,
+                        name: mostBookedJobs.text,
+                      );
+                    },),
+                ),
             
                 SizedBox(height: 30.sp,),
             
@@ -134,8 +168,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
             
                 SizedBox(height: 12.sp,),
-            
-                CustomQuickHomeRepairsList(),
+
+                Container(
+              padding: EdgeInsets.only(left: 12),
+              height: 145.sp,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: JobsClass.quickHomeRepairs.length,
+                itemBuilder: (context, index) {
+                  final mostBookedJobs = JobsClass.quickHomeRepairs[index];
+                  return CustomQuickHomeRepairsList(
+                    icon: mostBookedJobs.icon,
+                    text: mostBookedJobs.text,
+                  );
+                },),
+            ),
             
                 SizedBox(height: 90.sp,)
             

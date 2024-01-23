@@ -21,6 +21,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
+  FocusNode nameFocusNode = FocusNode();
+  FocusNode emailFocusNode = FocusNode();
+  FocusNode mobileFocusNode = FocusNode();
+  FocusNode passwordFocusNode = FocusNode();
+  FocusNode confirmPasswordFocusNode = FocusNode();
+
   bool password = true;
   bool confirmPassword = true;
   bool isCheckBoxSelected = false;
@@ -130,7 +136,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         SizedBox(height: 24.sp,),
               
                         CustomTextField(
+                          onEditingComplete: () {
+                            FocusScope.of(context).requestFocus(emailFocusNode);
+                          },
                           name: "Name",
+                          focusNode: nameFocusNode,
                           controller: nameController,
                           textInputAction: TextInputAction.next,
                           hint: "Enter Name",
@@ -141,6 +151,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               
                         CustomTextField(
                           name: "Email",
+                          onEditingComplete: () {
+                            FocusScope.of(context).requestFocus(mobileFocusNode);
+                          },
+                          focusNode: emailFocusNode,
                           controller: emailController,
                           textInputAction: TextInputAction.next,
                           hint: "Enter Email Address",
@@ -150,7 +164,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         SizedBox(height: 10.sp,),
               
                         CustomTextField(
+                          focusNode: mobileFocusNode,
                           name: "Mobile Number",
+                          onEditingComplete: () {
+                            FocusScope.of(context).requestFocus(passwordFocusNode);
+                          },
                           controller: mobileController,
                           textInputAction: TextInputAction.next,
                           hint: "Enter Mobile Number",
@@ -160,6 +178,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         SizedBox(height: 10.sp,),
               
                         CustomTextField(
+                          onEditingComplete: () {
+                            FocusScope.of(context).requestFocus(confirmPasswordFocusNode);
+                          },
+                          focusNode: passwordFocusNode,
                           name: "Password",
                           controller: passwordController,
                           textInputAction: TextInputAction.next,
@@ -183,7 +205,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         SizedBox(height: 10.sp,),
               
                         CustomTextField(
+                          focusNode: confirmPasswordFocusNode,
                           name: "Confirm Password",
+                          onEditingComplete: () {
+                            FocusScope.of(context).unfocus();
+                          },
                           isSecure: confirmPassword ? true : false,
                           suffix: InkWell(
                             onTap: () {

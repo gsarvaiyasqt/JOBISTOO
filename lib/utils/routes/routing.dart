@@ -20,7 +20,9 @@ class Routes {
     MenuRoute.jobberBusinessRoute:(context) => MenuRoute.jobberServiceChild,
     MenuRoute.jobberServiceRoute:(context) => MenuRoute.jobberBusinessChild,
     TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,
-    TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild
-    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild
+    TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild,
+    TabSellerRoute.jobRequestScreenRoute:(context) => TabSellerRoute.jobRequestScreenChild,
+    TabSellerRoute.managedJobSubDetailsScreenRoute:(context) => TabSellerRoute.managedJobSubDetailsChild,
+    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
   };
 }

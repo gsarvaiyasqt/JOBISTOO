@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:jobisto/app/tab_seller/components/custom_gridview_job_details.dart';
-import 'package:jobisto/app/tab_seller/domain/dummy_models/job_details_model.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
+import 'package:jobisto/base/common_components/custom/custom_message_button.dart';
 import 'package:jobisto/utils/utils.dart';
+import '../../tab_orders/domain/dummy_models/skilles_model.dart';
 
 class JobDetailsScreen extends StatefulWidget {
   const JobDetailsScreen({super.key});
@@ -17,17 +17,6 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-
-      },
-
-        shape: CircleBorder(),
-      child: SizedBox(
-        height: 30.sp,
-        width: 30.sp,
-        child: ImageUtil.iconImageClass.messageChatIcon,
-      ),
-      ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leadingWidth: 76.sp,
@@ -41,6 +30,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
       body: CustomBackGround(
         childBody: SafeArea(
           child: Stack(
+            alignment: Alignment.bottomRight,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.sp),
@@ -59,7 +49,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           SizedBox(
                             height: 24.sp,
                             width: 24.sp,
-                            child: ImageUtil.iconImageClass.starIcon,
+                            child: ImageUtil.iconImageClass.edit,
                           )
                         ],
                       ),
@@ -152,7 +142,79 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                         ],
                       ),
                   
-                      Container(height: 500.sp,color: kLightGrayColor,),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 20.sp),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: kPrimaryColor,
+                          borderRadius: BorderRadius.circular(20.sp)
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: SizedBox(
+                            height: 180.sp,
+                            child: ImageUtil.iconImageClass.plumbingProfileIcon,
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        padding: EdgeInsets.all(12.sp),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: kLightGrayColor.withOpacity(0.17),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("JOB Location",style: CustomTextStyle.primaryTextColorFont14W400,),
+                            SizedBox(height: 8.sp),
+                            Row(
+                              children: [
+                                Flexible(child: Text("Nairobi, Kenya",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                              ],
+                            ),
+                            SizedBox(height: 16.sp),
+                            Container(
+                              height: 1.sp,
+                              color: kLightGrayColor.withOpacity(0.5),
+                            ),
+                            SizedBox(height: 16.sp),
+                            Text("Skills",style: CustomTextStyle.primaryTextColorFont14W400,),
+                            SizedBox(height: 8.sp),
+                            Wrap(
+                              spacing: 8.sp,
+                              children: List.generate(SkillsModel.skillsList.length, (index) {
+                                return Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 15.sp,vertical: 8.sp),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xff6F778B).withOpacity(0.16),
+                                      borderRadius: BorderRadius.circular(60.sp)
+                                  ),
+                                  child: Text(SkillsModel.skillsList[index].skill ?? "",style: CustomTextStyle.primaryTextColorFont16W400.copyWith(
+                                      fontWeight: FontWeight.w300
+                                  ),),
+                                );
+                              }),
+                            ),
+                            SizedBox(height: 16.sp),
+                            Container(
+                              height: 1.sp,
+                              color: kLightGrayColor.withOpacity(0.5),
+                            ),
+                            SizedBox(height: 16.sp),
+                            Text("Expected Time",style: CustomTextStyle.primaryTextColorFont14W400,),
+                            SizedBox(height: 8.sp),
+                            Row(
+                              children: [
+                                Flexible(child: Text("2 Days",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 16.sp,),
                   
                       Row(
                         children: [
@@ -162,14 +224,24 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                             width: 24.sp,
                             child: ImageUtil.iconImageClass.termsAndConditionIcon,
                           ),
+
+
                           
                           Text("Terms & Conditions",style: CustomTextStyle.yellowRegularFont16Style.copyWith(decoration: TextDecoration.underline,decorationColor: kPrimaryColor),)
                   
                         ],
-                      )
+                      ),
+
+                      SizedBox(height: 15.sp,),
+
                     ],
                   ),
                 ),
+              ),
+
+
+              CustomMessageButton(
+                margin: EdgeInsets.only(bottom: 55.sp,right: 20.sp),
               )
             ],
           ),

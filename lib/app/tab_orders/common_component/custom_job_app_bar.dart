@@ -5,7 +5,8 @@ import '../../../base/common_components/custom/custom_background.dart';
 class CustomJabAppbar extends StatelessWidget implements PreferredSizeWidget{
   final double? height;
   final Widget? actionIcon;
-  const CustomJabAppbar({Key? key, this.height, this.actionIcon}) : super(key: key);
+  final Widget? image;
+  const CustomJabAppbar({Key? key, this.height, this.actionIcon,this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class CustomJabAppbar extends StatelessWidget implements PreferredSizeWidget{
             child: SizedBox(
                 height: 144.sp,
                 width: 144.sp,
-                child: ImageUtil.iconImageClass.plumbingProfileIcon),
+                child: image),
           )
         ],
       ),
