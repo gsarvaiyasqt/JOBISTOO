@@ -12,6 +12,16 @@ class SettingsClass{
     ),
 
     SettingsClass(
+        suffixIcon: "/become_a_jobber.svg",
+        name: "Manage a Seller"
+    ),
+
+    SettingsClass(
+        suffixIcon: "/become_a_jobber.svg",
+        name: "Manage Your Business"
+    ),
+
+    SettingsClass(
       suffixIcon: "/my_jobs.svg",
       name: "My JOBs"
     ),
