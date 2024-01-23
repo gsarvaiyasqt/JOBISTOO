@@ -35,9 +35,34 @@ extension CustomTextStyle on TextStyle{
       fontWeight: FontWeight.w400
   );
 
+  static TextStyle get secondaryTextColorFont20W600 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w600
+  );
+
   static TextStyle get secondaryTextColorFont16W400 => TextStyle(
       color: kTextSecondaryColor,
       fontSize: 16.sp,
+      fontWeight: FontWeight.w400
+  );
+
+
+  static TextStyle get secondaryTextColorFont14W400 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get secondaryTextColorFont14W600 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w600
+  );
+
+  static TextStyle get secondaryTextColorFont12W400 => TextStyle(
+      color: kTextSecondaryColor,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400
   );
 
@@ -47,9 +72,29 @@ extension CustomTextStyle on TextStyle{
       fontWeight: FontWeight.w400
   );
 
+  static TextStyle get primaryTextColorFont16W600 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400
+  );
+
+
+
   static TextStyle get primaryTextColorFont14W400 => TextStyle(
       color: kTextPrimaryColor,
       fontSize: 14.sp,
+      fontWeight: FontWeight.w400
+  );
+
+  static TextStyle get primaryTextColorFont14W300 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w300
+  );
+
+  static TextStyle get primaryTextColorFont12W400 => TextStyle(
+      color: kTextPrimaryColor,
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400
   );
 
@@ -58,6 +103,9 @@ extension CustomTextStyle on TextStyle{
       fontSize: 18.sp,
       fontWeight: FontWeight.w400
   );
+
+
+
 
 
   static TextStyle get yellowSemiBoldFont18Style => TextStyle(

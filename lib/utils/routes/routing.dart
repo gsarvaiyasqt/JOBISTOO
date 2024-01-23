@@ -17,6 +17,8 @@ class Routes {
     AuthRoute.changePasswordRoute:(context) => AuthRoute.changePasswordChild,
     TabRoute.tabRoute:(context) => TabRoute.tabChild,
     TabSettingsRoute.becomeAJobberRoute:(context) => TabSettingsRoute.becomeAJobberChild,
+    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
+    TabOrderRoute.jobberProfileRoute : (context) => TabOrderRoute.myJobberProfileChild,
     MenuRoute.jobberBusinessRoute:(context) => MenuRoute.jobberServiceChild,
     MenuRoute.jobberServiceRoute:(context) => MenuRoute.jobberBusinessChild,
     TabSellerRoute.manageJobScreenRoute:(context) => TabSellerRoute.manageJobScreenChild,
