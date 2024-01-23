@@ -17,6 +17,8 @@ class Routes {
     AuthRoute.changePasswordRoute:(context) => AuthRoute.changePasswordChild,
     TabRoute.tabRoute:(context) => TabRoute.tabChild,
     MenuRoute.becomeAJobberRoute:(context) => MenuRoute.becomeAJobberChild,
+    TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
+    TabOrderRoute.jobberProfileRoute : (context) => TabOrderRoute.myJobberProfileChild,
     MenuRoute.jobberBusinessRoute:(context) => MenuRoute.jobberServiceChild,
     MenuRoute.jobberServiceRoute:(context) => MenuRoute.jobberBusinessChild,
     MenuRoute.menuBusinessRoute:(context) => MenuRoute.menuBusinessChild,
@@ -26,6 +28,8 @@ class Routes {
     TabSellerRoute.jobDetailsScreenRoute:(context) => TabSellerRoute.jobDetailsChild,
     TabSellerRoute.jobRequestScreenRoute:(context) => TabSellerRoute.jobRequestScreenChild,
     TabSellerRoute.managedJobSubDetailsScreenRoute:(context) => TabSellerRoute.managedJobSubDetailsChild,
+    TabSellerRoute.jobsApplyScreenRoute:(context) => TabSellerRoute.jobsApplyScreenChild,
+    TabSellerRoute.portfolioScreenRoute:(context) => TabSellerRoute.portfolioScreenChild,
     TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
   };
 }

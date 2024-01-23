@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
+import 'package:jobisto/app/tab_orders/route/order_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/read_more_text_widget.dart';
 import 'package:jobisto/utils/utils.dart';
 
+import '../../../utils/common_utils/enums.dart';
 import '../domain/dummy_models/plumbing_request_model.dart';
 import '../domain/dummy_models/skilles_model.dart';
 class OrderDetailScreen extends StatefulWidget {
@@ -16,6 +18,7 @@ class OrderDetailScreen extends StatefulWidget {
 class _OrderDetailScreenState extends State<OrderDetailScreen> {
   @override
   Widget build(BuildContext context) {
+    final jobsServiceData = ModalRoute.of(context)?.settings.arguments as JobsServiceData;
     return SafeArea(
       bottom: false,
       child: Scaffold(
@@ -33,7 +36,24 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Plumbing",style: CustomTextStyle.primaryTextColorFont22W600,),
+                  Row(
+                    children: [
+                      Expanded(child: Text("Plumbing",style: CustomTextStyle.primaryTextColorFont22W600,)),
+                      if(jobsServiceData.statustype == STATUSTYPE.COMPLETED)
+                        Row(
+                          children: [
+                            SizedBox(
+                                height: 18.sp,width: 18.sp,
+                                child: ImageUtil.iconImageClass.completedIcon),
+                            SizedBox(width: 8.sp),
+                            Text(jobsServiceData.statustype?.title ?? "",style: CustomTextStyle.primaryTextColorFont14W400.copyWith(
+                              color: kLightGreenColor
+                            ))
+                          ],
+                        ),
+
+                    ],
+                  ),
                   SizedBox(height: 10.sp),
                   Text("\$50.00",style: CustomTextStyle.secondaryTextColorFont16W600),
                   SizedBox(height: 10.sp),
@@ -45,6 +65,15 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                     ),
                     text: "Lorem ipsum dolor sit amet consectetur. Dignissim ut amet lorem turpis diam. Phasellus netus neque tincidunt diam lectus ultrices porta et nunc.",
                   ),
+                  if(jobsServiceData.statustype != null)
+                    Column(
+                      children: [
+                      Container(
+                        height: 1.sp,
+                        color: kLightGrayColor,
+                      )
+                      ],
+                    ),
                   SizedBox(height: 24.sp),
                   Container(
                     padding: EdgeInsets.all(12.sp),
@@ -130,30 +159,35 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                   ListView.builder(
                     shrinkWrap: true,
                     padding: EdgeInsets.only(bottom: 50.sp),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: PlumbingRequestModel.plumbingReqList.length,
                     itemBuilder: (context, index) {
-                      
                       final plumbingItem =  PlumbingRequestModel.plumbingReqList[index];
-                      return Container(
-                        margin: EdgeInsets.only(top: 10.sp),
-                        padding: EdgeInsets.symmetric(vertical: 15.sp,horizontal: 12.sp),
-                      decoration: BoxDecoration(
-                        color: kLightGrayColor.withOpacity(0.16),
-                        borderRadius: BorderRadius.circular(10.sp),
-                      ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                              height: 24.sp,
-                              width: 24.sp,
-                              child: Image.asset("$dummyImgPath/${plumbingItem.imageUrl}")),
-                          SizedBox(width: 10.sp),
-                          Expanded(child: Text(plumbingItem.reqText ?? "",style: CustomTextStyle.primaryTextColorFont16W400,)),
-                          SizedBox(width: 10.sp),
-                          SizedBox(width: 24.sp,height: 24.sp,child: ImageUtil.iconImageClass.crossArrowIcon,)
-                        ],
-                      ),
-                    );
+                      return GestureDetector(
+                        onTap: () {
+                          TabOrderRoute.goToJobberProfilePage(context);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(top: 10.sp),
+                          padding: EdgeInsets.symmetric(vertical: 15.sp,horizontal: 12.sp),
+                        decoration: BoxDecoration(
+                          color: kLightGrayColor.withOpacity(0.16),
+                          borderRadius: BorderRadius.circular(10.sp),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                                height: 24.sp,
+                                width: 24.sp,
+                                child: Image.asset("$dummyImgPath/${plumbingItem.imageUrl}")),
+                            SizedBox(width: 10.sp),
+                            Expanded(child: Text(plumbingItem.reqText ?? "",style: CustomTextStyle.primaryTextColorFont16W400,)),
+                            SizedBox(width: 10.sp),
+                            SizedBox(width: 24.sp,height: 24.sp,child: ImageUtil.iconImageClass.crossArrowIcon,)
+                          ],
+                        ),
+                                            ),
+                      );
                   },)
                 ],
               ),

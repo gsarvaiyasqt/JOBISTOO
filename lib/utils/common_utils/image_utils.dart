@@ -85,8 +85,6 @@ class GraphicsClass{
 
 class DummyImgClass{
   Widget get homePaintImage  => const AssetsImagePictures(assetName: "$dummyImgPath/home_paint.png",fit: BoxFit.contain,);
-  Widget get plumber1Image  => const AssetsImagePictures(assetName: "$dummyImgPath/plumber_1.png",fit: BoxFit.contain,);
-  Widget get plumber2Image  => const AssetsImagePictures(assetName: "$dummyImgPath/plumber_2.png",fit: BoxFit.contain,);
   Widget get slideImage  => const AssetsImagePictures(assetName: "$dummyImgPath/slide.png",fit: BoxFit.contain,);
   Widget get profilePic => const AssetsImagePictures(assetName: "$dummyImgPath/profile_pic.png",fit: BoxFit.cover,);
   Widget get profile11 => const AssetsImagePictures(assetName: "$dummyImgPath/profile_1.png",fit: BoxFit.cover,);
@@ -121,6 +119,7 @@ class CustomSvgPictures extends StatelessWidget {
       width: width,
       fit: fit,
       alignment: alignment,
+      // colorFilter: ColorFilter.mode(color ==  ? null : color , BlendMode.srcIn),
       color: color,
       placeholderBuilder: (context) {
         return const SizedBox.shrink();

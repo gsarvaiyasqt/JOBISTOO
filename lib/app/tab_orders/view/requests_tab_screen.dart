@@ -21,7 +21,7 @@ class _RequestTabState extends State<RequestTab> {
         final requestList = OrdersClass.requestList[index];
         return GestureDetector(
           onTap: () {
-            TabOrderRoute.goToBecomeAJobberPage(context);
+            TabOrderRoute.goToBecomeAJobberPage(context,requestList.jobsServiceData);
           },
           child: Padding(
             padding: EdgeInsets.only(bottom: 10.sp,left: 20.sp,right: 20.sp),
