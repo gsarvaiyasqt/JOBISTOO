@@ -68,9 +68,11 @@ class IconImageClass{
   Widget get logoutIcon => const CustomSvgPictures.asset("$iconPath/logoutt.svg",fit: BoxFit.cover,color: Color(0xffffffff),);
   Widget get deleteAccountIcon =>  CustomSvgPictures.asset("$iconPath/deleteAccountIcon.svg",fit: BoxFit.cover,);
   Widget get delete => CustomSvgPictures.asset("$iconPath/delete_all.svg",fit: BoxFit.cover,);
-  Widget get upArrow => const CustomSvgPictures.asset("$iconPath/up_arrow.svg,",fit: BoxFit.cover,);
-  Widget get downArrow => const CustomSvgPictures.asset("$iconPath/down_arrow.svg,",fit: BoxFit.cover,);
-
+  Widget get upArrow => const CustomSvgPictures.asset("$iconPath/up_arrow.svg",fit: BoxFit.cover,);
+  Widget get downArrow => const CustomSvgPictures.asset("$iconPath/down_arrow.svg",fit: BoxFit.cover,);
+  Widget get serviceIcon => const CustomSvgPictures.asset("$iconPath/service.svg",fit: BoxFit.cover,);
+  Widget get profileIcon => const CustomSvgPictures.asset("$iconPath/profile.svg",fit: BoxFit.cover,);
+  Widget get portfolioIcon => const CustomSvgPictures.asset("$iconPath/portfolio.svg",fit: BoxFit.cover,);
 
 }
 

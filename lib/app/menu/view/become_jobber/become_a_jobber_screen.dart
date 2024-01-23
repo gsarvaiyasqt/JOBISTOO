@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:jobisto/app/menu/route/menu_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
 
-import '../../menu/components/become_job_card.dart';
-import '../../menu/components/common_appbar.dart';
-import '../route/tab_settings_route.dart';
+import '../../components/become_job_card.dart';
+import '../../components/common_appbar.dart';
+import '../../../tab_settings/route/tab_settings_route.dart';
 
 class BecomeAJobberScreen extends StatefulWidget {
   const BecomeAJobberScreen({super.key});
@@ -71,8 +72,8 @@ class _BecomeAJobberScreenState extends State<BecomeAJobberScreen> {
                     textStyle: CustomTextStyle.blackSemiBoldFont16Style,
                     onTap: (){
                       currentIndex == 0 ?
-                      TabSettingsRoute.goToJobberServicePage(context) :
-                      TabSettingsRoute.goToJobberBusinessPage(context);
+                      MenuRoute.goToJobberServicePage(context) :
+                      MenuRoute.goToJobberBusinessPage(context);
                     },
                   ),
                 ),
