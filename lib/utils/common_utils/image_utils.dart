@@ -24,6 +24,7 @@ class LogoImage {
 class IconImageClass{
   Widget get managedJobsIcon => const CustomSvgPictures.asset("$iconPath/manage_jobs.svg",fit: BoxFit.cover,);
   Widget get acceptedIcon => const CustomSvgPictures.asset("$iconPath/accepted.svg", fit: BoxFit.cover);
+  Widget get addIcon => const CustomSvgPictures.asset("$iconPath/add.svg", fit: BoxFit.cover);
   Widget get swipeIcon => const CustomSvgPictures.asset("$iconPath/swipe.svg", fit: BoxFit.cover);
   Widget get backArrowIcon => CustomSvgPictures.asset("$iconPath/back_arrow.svg", fit: BoxFit.cover,height: 24.sp,width: 24.sp,);
   Widget get calendarIcon => const CustomSvgPictures.asset("$iconPath/calender.svg", fit: BoxFit.cover);
@@ -59,10 +60,14 @@ class IconImageClass{
   Widget get googleIcon => const CustomSvgPictures.asset("$iconPath/google.svg", fit: BoxFit.cover);
   Widget get openEyeIcon => const CustomSvgPictures.asset("$iconPath/open_eye.svg", fit: BoxFit.cover,color: Colors.white,);
   Widget get searchIcon => const CustomSvgPictures.asset("$iconPath/search.svg",fit: BoxFit.cover,);
+  Widget get cameraIcon =>  CustomSvgPictures.asset("$iconPath/camera.svg", fit: BoxFit.cover,width: 30.sp,height: 30.sp);
+  Widget get galleryIcon => const CustomSvgPictures.asset("$iconPath/gallery.svg", fit: BoxFit.cover);
   Widget get nextArrowIcon => const CustomSvgPictures.asset("$iconPath/next_arrow.svg",fit: BoxFit.cover,);
   Widget get logoutIcon => const CustomSvgPictures.asset("$iconPath/logoutt.svg",fit: BoxFit.cover,color: Color(0xffffffff),);
   Widget get deleteAccountIcon =>  CustomSvgPictures.asset("$iconPath/deleteAccountIcon.svg",fit: BoxFit.cover,);
   Widget get delete => CustomSvgPictures.asset("$iconPath/delete_all.svg",fit: BoxFit.cover,);
+  Widget get upArrow => const CustomSvgPictures.asset("$iconPath/up_arrow.svg,",fit: BoxFit.cover,);
+  Widget get downArrow => const CustomSvgPictures.asset("$iconPath/down_arrow.svg,",fit: BoxFit.cover,);
 
 
 }
