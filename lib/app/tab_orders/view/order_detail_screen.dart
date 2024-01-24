@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobisto/app/tab_orders/common_component/common_profile_component.dart';
 import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
 import 'package:jobisto/app/tab_orders/route/order_route.dart';
+import 'package:jobisto/base/common_components/custom/acc_and_rej_custom_botton.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/read_more_text_widget.dart';
 import 'package:jobisto/utils/utils.dart';
@@ -280,7 +281,9 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                              final plumbingItem =  PlumbingRequestModel.plumbingReqList[index];
                              return GestureDetector(
                                onTap: () {
-                                 TabOrderRoute.goToJobberProfilePage(context);
+                                 TabOrderRoute.goToJobberProfilePage(context,JobsServiceData(
+                                   jobstype: JOBSTYPE.BUSINESS
+                                 ));
                                },
                                child: Container(
                                  margin: EdgeInsets.only(top: 10.sp),
@@ -312,6 +315,8 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
               ),
             ),
 
+
+
             if(jobsServiceData.statustype != null)
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -329,7 +334,6 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                   ),
                 ],
               ),
-
 
             if(jobsServiceData.statustype == STATUSTYPE.PENDING)
             Column(
