@@ -26,181 +26,181 @@ class _ManagedJobsSubDetailsScreenState extends State<ManagedJobsSubDetailsScree
           height: 226.sp,
         ),
         body: CustomBackGround(
-          childBody: Stack(
-            alignment: Alignment.bottomCenter,
+          childBody: Column(
             children: [
 
-              SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.sp),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+              Expanded(
+                child: SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
 
-                        SizedBox(height: 20.sp,),
+                          SizedBox(height: 20.sp,),
 
-                        Text("Installing Toilet Seat",style: CustomTextStyle.semiBoldFont22Style,),
+                          Text("Installing Toilet Seat",style: CustomTextStyle.semiBoldFont22Style,),
 
-                        SizedBox(height: 8.sp,),
+                          SizedBox(height: 8.sp,),
 
-                        Text("\$50.00",style: CustomTextStyle.yellowRegularFont16Style,),
+                          Text("\$50.00",style: CustomTextStyle.yellowRegularFont16Style,),
 
-                        SizedBox(height: 8.sp,),
+                          SizedBox(height: 8.sp,),
 
-                        Text.rich(
-                          TextSpan(
-                            text: "Skilled professional needed for installing toilet seat. Proficient in assembly, ensuring proper alignment and stability. Attention to detail and plumbing knowledge required. ",
-                            style: CustomTextStyle.regularFont16Style.copyWith(color: kSecondaryColor.withOpacity(0.80)),
+                          Text.rich(
+                            TextSpan(
+                              text: "Skilled professional needed for installing toilet seat. Proficient in assembly, ensuring proper alignment and stability. Attention to detail and plumbing knowledge required. ",
+                              style: CustomTextStyle.regularFont16Style.copyWith(color: kSecondaryColor.withOpacity(0.80)),
+                              children: [
+                                TextSpan(
+                                  text: "Read more",
+                                  style: CustomTextStyle.yellowRegularFont16Style
+                                )
+                              ]
+                            )
+                          ),
+
+                          SizedBox(height: 8.sp,),
+
+                          Row(
                             children: [
-                              TextSpan(
-                                text: "Read more",
-                                style: CustomTextStyle.yellowRegularFont16Style
-                              )
-                            ]
-                          )
-                        ),
 
-                        SizedBox(height: 8.sp,),
-
-                        Row(
-                          children: [
-
-                            Container(
-                              height: 30.sp,
-                              width: 30.sp,
-                              decoration: BoxDecoration(
-                                color: kSecondaryColor,
-                                border: Border.all(color: kSecondaryColor),
-                                shape: BoxShape.circle
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(100),
-                                child: SizedBox(
-                                  child: ImageUtil.dummyImgClass.profilePic,
+                              Container(
+                                height: 30.sp,
+                                width: 30.sp,
+                                decoration: BoxDecoration(
+                                  color: kSecondaryColor,
+                                  border: Border.all(color: kSecondaryColor),
+                                  shape: BoxShape.circle
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: SizedBox(
+                                    child: ImageUtil.dummyImgClass.profilePic,
+                                  ),
                                 ),
                               ),
-                            ),
 
-                            SizedBox(width: 8.sp,),
+                              SizedBox(width: 8.sp,),
 
-                            Text("Jabari Osei",style: CustomTextStyle.regularFont14Style,),
+                              Text("Jabari Osei",style: CustomTextStyle.regularFont14Style,),
 
-                            Container(
-                              margin: EdgeInsets.symmetric(horizontal: 12.sp),
-                              height: 20.sp,
-                              width: 1.sp,
-                              color: kSecondaryColor.withOpacity(0.25),
-                            ),
-
-                            SizedBox(
-                              height: 24.sp,
-                              width: 24.sp,
-                              child: ImageUtil.iconImageClass.calendarIcon,
-                            ),
-
-                            SizedBox(width: 6.sp,),
-
-                            Text("11/25/2023",style: CustomTextStyle.regularFont14Style,)
-                          ],
-                        ),
-
-                        SizedBox(height: 24.sp,),
-
-                        Container(
-                          padding: EdgeInsets.all(12.sp),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: kLightGrayColor.withOpacity(0.17),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("JOB Location",style: CustomTextStyle.primaryTextColorFont14W400,),
-                              SizedBox(height: 8.sp),
-                              Row(
-                                children: [
-                                  Flexible(child: Text("Nairobi, Kenya",style: CustomTextStyle.primaryTextColorFont18W400,)),
-                                ],
-                              ),
-                              SizedBox(height: 16.sp),
                               Container(
-                                height: 1.sp,
-                                color: kLightGrayColor.withOpacity(0.5),
+                                margin: EdgeInsets.symmetric(horizontal: 12.sp),
+                                height: 20.sp,
+                                width: 1.sp,
+                                color: kSecondaryColor.withOpacity(0.25),
                               ),
-                              SizedBox(height: 16.sp),
-                              Text("Skills",style: CustomTextStyle.primaryTextColorFont14W400,),
-                              SizedBox(height: 8.sp),
-                              Wrap(
-                                spacing: 8.sp,
-                                children: List.generate(SkillsModel.skillsList.length, (index) {
-                                  return Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 15.sp,vertical: 8.sp),
-                                    decoration: BoxDecoration(
-                                        color: Color(0xff6F778B).withOpacity(0.16),
-                                        borderRadius: BorderRadius.circular(60.sp)
-                                    ),
-                                    child: Text(SkillsModel.skillsList[index].skill ?? "",style: CustomTextStyle.primaryTextColorFont16W400.copyWith(
-                                        fontWeight: FontWeight.w300
-                                    ),),
-                                  );
-                                }),
+
+                              SizedBox(
+                                height: 24.sp,
+                                width: 24.sp,
+                                child: ImageUtil.iconImageClass.calendarIcon,
                               ),
-                              SizedBox(height: 16.sp),
-                              Container(
-                                height: 1.sp,
-                                color: kLightGrayColor.withOpacity(0.5),
-                              ),
-                              SizedBox(height: 16.sp),
-                              Text("Expected Time",style: CustomTextStyle.primaryTextColorFont14W400,),
-                              SizedBox(height: 8.sp),
-                              Row(
-                                children: [
-                                  Flexible(child: Text("30 Days",style: CustomTextStyle.primaryTextColorFont18W400,)),
-                                ],
-                              ),
+
+                              SizedBox(width: 6.sp,),
+
+                              Text("11/25/2023",style: CustomTextStyle.regularFont14Style,)
                             ],
                           ),
-                        ),
 
-                        SizedBox(height: 16.sp,),
+                          SizedBox(height: 24.sp,),
 
-                        Row(
-                          children: [
-
-                            SizedBox(
-                              height: 24.sp,
-                              width: 24.sp,
-                              child: ImageUtil.iconImageClass.termsAndConditionIcon,
+                          Container(
+                            padding: EdgeInsets.all(12.sp),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: kLightGrayColor.withOpacity(0.17),
                             ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("JOB Location",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                SizedBox(height: 8.sp),
+                                Row(
+                                  children: [
+                                    Flexible(child: Text("Nairobi, Kenya",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                                  ],
+                                ),
+                                SizedBox(height: 16.sp),
+                                Container(
+                                  height: 1.sp,
+                                  color: kLightGrayColor.withOpacity(0.5),
+                                ),
+                                SizedBox(height: 16.sp),
+                                Text("Skills",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                SizedBox(height: 8.sp),
+                                Wrap(
+                                  spacing: 8.sp,
+                                  children: List.generate(SkillsModel.skillsList.length, (index) {
+                                    return Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 15.sp,vertical: 8.sp),
+                                      decoration: BoxDecoration(
+                                          color: Color(0xff6F778B).withOpacity(0.16),
+                                          borderRadius: BorderRadius.circular(60.sp)
+                                      ),
+                                      child: Text(SkillsModel.skillsList[index].skill ?? "",style: CustomTextStyle.primaryTextColorFont16W400.copyWith(
+                                          fontWeight: FontWeight.w300
+                                      ),),
+                                    );
+                                  }),
+                                ),
+                                SizedBox(height: 16.sp),
+                                Container(
+                                  height: 1.sp,
+                                  color: kLightGrayColor.withOpacity(0.5),
+                                ),
+                                SizedBox(height: 16.sp),
+                                Text("Expected Time",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                SizedBox(height: 8.sp),
+                                Row(
+                                  children: [
+                                    Flexible(child: Text("30 Days",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          SizedBox(height: 16.sp,),
+
+                          Row(
+                            children: [
+
+                              SizedBox(
+                                height: 24.sp,
+                                width: 24.sp,
+                                child: ImageUtil.iconImageClass.termsAndConditionIcon,
+                              ),
 
 
 
-                            Text("Terms & Conditions",style: CustomTextStyle.yellowRegularFont16Style.copyWith(decoration: TextDecoration.underline,decorationColor: kPrimaryColor),)
+                              Text("Terms & Conditions",style: CustomTextStyle.yellowRegularFont16Style.copyWith(decoration: TextDecoration.underline,decorationColor: kPrimaryColor),)
 
-                          ],
-                        ),
+                            ],
+                          ),
 
-                        SizedBox(height: 90.sp,)
-                      ],
+                          SizedBox(height: 90.sp,)
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
 
               Padding(
-                padding: EdgeInsets.only(left: 20.sp,right: 20.sp,bottom: 30.sp),
-                child: SizedBox(
-                  height: 54.sp,
-                  child: CustomButton(
-                    onTap: () {
-                      TabSellerRoute.goToJobsApplyPage(context);
-                    },
-                    btnText: "Apply Now",
-                    textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: Colors.black),
-                  ),
+                padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                child: CustomButton(
+                  onTap: () {
+                    TabSellerRoute.goToJobsApplyPage(context);
+                  },
+                  btnText: "Apply Now",
+                  textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: Colors.black),
                 ),
-              )
+              ),
+
+              SizedBox(height: 30.sp,)
             ],
           ),
         ),

@@ -99,7 +99,7 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
                           SizedBox(
                               height: 24.sp,
                               width: 24.sp,
-                              child: ImageUtil.iconImageClass.crossArrowIconMain)
+                              child: ImageUtil.iconImageClass.upArrow)
                         ],
                       ),
 
@@ -129,7 +129,7 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
                           SizedBox(
                             height: 24.sp,
                             width: 24.sp,
-                            child: ImageUtil.iconImageClass.crossArrowIconMain,
+                            child: ImageUtil.iconImageClass.downArrow,
                           )
                         ],
                       ),
@@ -208,7 +208,7 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
                       ),
 
                       SizedBox(
-                        height: 100.sp,
+                        height: 170.sp,
                       )
                     ],
                   ),
