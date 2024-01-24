@@ -3,6 +3,7 @@ import 'package:jobisto/app/auth/route/auth_route.dart';
 import 'package:jobisto/app/menu/route/menu_route.dart';
 import 'package:jobisto/app/presentation/route/lending_route.dart';
 import 'package:jobisto/app/tab/route/tab_route.dart';
+import 'package:jobisto/app/tab_home/route/home_route.dart';
 import 'package:jobisto/app/tab_orders/route/order_route.dart';
 import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
 
@@ -32,5 +33,9 @@ class Routes {
     TabSellerRoute.jobsApplyScreenRoute:(context) => TabSellerRoute.jobsApplyScreenChild,
     TabSellerRoute.portfolioScreenRoute:(context) => TabSellerRoute.portfolioScreenChild,
     TabOrderRoute.orderDetailRoute : (context) => TabOrderRoute.becomeAJobberChild,
+    TabHomeRoute.topJobDetailsRoute:(context) => TabHomeRoute.topJobDetailsChild,
+    TabHomeRoute.bookServiceDetailsRoute:(context) => TabHomeRoute.bookServiceDetailsChild,
+    TabHomeRoute.bookServiceRoute:(context) => TabHomeRoute.bookServiceChild,
+    TabHomeRoute.myJobistoProfileRoute:(context) => TabHomeRoute.myJobistoProfileChild
   };
 }

@@ -76,5 +76,31 @@ class JobsClass{
 
   ];
 
+  static List<JobsClass> topJobsSubList = [
+
+    JobsClass(
+      icon: "/plumbing.svg",
+      text: "Residential\nPlumbing"
+    ),
+
+    JobsClass(
+        icon: "/plumbing.svg",
+        text: "Commercial\nPlumbing"
+    ),
+
+    JobsClass(
+        icon: "/plumbing.svg",
+        text: "Pipe\nReplacement"
+    ),
+
+    JobsClass(
+        icon: "/plumbing.svg",
+        text: "Residential\nPlumbing"
+    ),
+    JobsClass(
+        icon: "/plumbing.svg",
+        text: "Pipe\nReplacement"
+    ),
+  ];
 
 }

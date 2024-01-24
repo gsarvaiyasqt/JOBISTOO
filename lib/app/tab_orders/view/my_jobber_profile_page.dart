@@ -187,10 +187,10 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
                   SliverPadding(
                     padding: EdgeInsets.only(left: 20.sp,right: 20.sp,bottom: kFloatingActionButtonMargin + 48),
                     sliver: SliverList(delegate: SliverChildBuilderDelegate(
-                            childCount: ServiceListData.serviceListData.length,
+                            childCount: ServiceListData.residentialPlumbingData.length,
                             (context, index) {
                               /// Service Component
-                              final service =  ServiceListData.serviceListData[index];
+                              final service =  ServiceListData.residentialPlumbingData[index];
                               return ServiceTypeDataWidget(service: service, index: index);
                             }
                             )),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_seller/components/services_list.dart';
+import 'package:jobisto/base/common_components/custom/acc_and_rej_custom_botton.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
-import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/base/common_components/custom/custom_message_button.dart';
 import 'package:jobisto/utils/utils.dart';
 
@@ -219,32 +219,16 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.sp),
               height: 100.sp,
-              child: Row(
+              child: const Row(
                 children: [
 
                   Expanded(
-                    child: SizedBox(
-                      height: 54,
-                      child: CustomButton(
-                        btnColor: kLightGrayColor,
-                        btnText: "Reject",
-                        textStyle: CustomTextStyle.semiBoldFont16Style,
-                      ),
+                    child: CustomAcceptAndRejectButton(
+                      rejectText: "Reject",
+                      acceptText: "Accept",
                     ),
                   ),
 
-                  SizedBox(width: 8.sp,),
-
-                  Expanded(
-                    child: SizedBox(
-                      height: 54,
-                      child: CustomButton(
-                        btnColor: kPrimaryColor,
-                        btnText: "Accept",
-                        textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: Colors.black),
-                      ),
-                    ),
-                  )
                 ],
               ),
             ),
