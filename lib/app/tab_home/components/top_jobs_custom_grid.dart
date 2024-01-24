@@ -5,9 +5,7 @@ import 'package:jobisto/utils/utils.dart';
 
 class TopJobsCustomGrid extends StatefulWidget {
   final JobsClass? jobsData;
-  final String? icon;
-  final String? name;
-  const TopJobsCustomGrid({super.key, this.icon, this.name, this.jobsData});
+  const TopJobsCustomGrid({super.key, this.jobsData});
 
   @override
   State<TopJobsCustomGrid> createState() => _TopJobsCustomGridState();

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:jobisto/app/tab_home/components/most_book_jobs_list.dart';
 import 'package:jobisto/app/tab_home/components/quick_home_repairs_list.dart';
 import 'package:jobisto/app/tab_home/components/top_jobs_custom_grid.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_info_title.dart';
 import 'package:jobisto/utils/utils.dart';
-
 import '../domain/dummy_models/jobs_model.dart';
 
 class HomeScreen extends StatefulWidget {

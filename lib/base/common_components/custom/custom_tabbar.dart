@@ -1,13 +1,13 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:jobisto/utils/utils.dart';
 class CustomTabBarView extends StatefulWidget {
+  final Color? color;
   final List<String>? tabList;
   final EdgeInsetsGeometry? padding;
   // Lambda
   final Function(TabBarOnChangeData? tabBarOnChangeData)? onTabChange;
-  const CustomTabBarView({super.key, this.tabList, this.onTabChange, this.padding});
+  const CustomTabBarView({super.key, this.tabList, this.onTabChange, this.padding, this.color});
 
   @override
   State<CustomTabBarView> createState() => _CustomTabBarViewState();
@@ -30,7 +30,7 @@ class _CustomTabBarViewState extends State<CustomTabBarView> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kBlackColor,
+      color: widget.color ?? kBlackColor,
       child: Padding(
         padding: widget.padding ??  EdgeInsets.zero,
         child: Row(
@@ -41,6 +41,9 @@ class _CustomTabBarViewState extends State<CustomTabBarView> with SingleTickerPr
               onTap: () {
                 setState(() {
                   currentIndex = index;
+                  widget.onTabChange!(TabBarOnChangeData(
+                    currentIndex: index
+                  ));
                 });
               },
               child: Column(

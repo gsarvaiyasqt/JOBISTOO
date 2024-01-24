@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_seller/view/requests_screen.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
+import 'package:jobisto/base/common_components/custom/custom_tabbar.dart';
 import 'package:jobisto/utils/utils.dart';
 
 class ManageJobsScreen extends StatefulWidget {
@@ -36,61 +37,25 @@ class _ManageJobsScreenState extends State<ManageJobsScreen> with SingleTickerPr
           child: Column(
             children: [
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(orderTabList.length, (index) {
-                  return InkWell(
-                    splashColor: kPrimaryColor.withOpacity(0.1),
-                    onTap: (){
-                      setState(() {
-                        currentIndex = index;
-                        tabController?.animateTo(currentIndex,duration: const Duration(milliseconds: 400),curve: Curves.easeIn);
-                      });
-                    },
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 20.sp),
-                          width: MediaQuery.sizeOf(context).width / 3,
-                          alignment: Alignment.center,
-                          child: Text(orderTabList[index],
-                              style: currentIndex == index
-                                  ? CustomTextStyle.semiBoldFont16Style.copyWith(color: kPrimaryColor)
-                                  : CustomTextStyle.semiBoldFont16Style
-                          ),
-                        ),
-                        Container(
-                          width:MediaQuery.sizeOf(context).width / 3,
-                          height: 1.5.sp,
-                          color: kLightGrayColor,
-                          child:
-                          currentIndex == index
-                              ? Container(
-                            height: 1.sp,
-                            width: MediaQuery.sizeOf(context).width / 3,
-                            color: kPrimaryColor,
-                          )
-                              : SizedBox.shrink(),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+              CustomTabBarView(
+                color: Colors.transparent,
+                tabList: orderTabList,
+                onTabChange: (tabBarOnChangeData) {
+                  setState(() {
+                    currentIndex = tabBarOnChangeData?.currentIndex ?? 0;
+                  });
+                },
               ),
-
               Expanded(
-                child: TabBarView(
-                    controller: tabController,
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      RequestScreen(),
-                      Text("data"),
-                      Text("data")
-                    ]
+                child: IndexedStack(
+                  index: currentIndex,
+                  children: [
+                    RequestScreen(),
+                    Text("data"),
+                    Text("data")
+                  ],
                 ),
               )
-
-
             ],
           ),
         ),
@@ -99,4 +64,4 @@ class _ManageJobsScreenState extends State<ManageJobsScreen> with SingleTickerPr
   }
 }
 
-List orderTabList = ["Requests","Accepted","Rejected"];
+List<String> orderTabList = ["Requests","Accepted","Rejected"];

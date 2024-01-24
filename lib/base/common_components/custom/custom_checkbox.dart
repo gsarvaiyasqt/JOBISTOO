@@ -5,11 +5,13 @@ import 'package:jobisto/utils/utils.dart';
 
 
 class CustomCheckBox extends StatelessWidget {
-  const CustomCheckBox({Key? key, this.onChanged, this.value, this.borderColor}) : super(key: key);
+  const CustomCheckBox({Key? key, this.onChanged, this.value, this.borderColor,this.checkColor, this.fillColor}) : super(key: key);
 
   final ValueChanged<bool?>? onChanged;
   final bool? value;
   final Color? borderColor;
+  final Color? checkColor;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,8 @@ class CustomCheckBox extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2.5.sp))
             ),
             child: Checkbox(
-              activeColor: themeColor,
-              checkColor: Colors.black,
+              activeColor: fillColor ?? themeColor,
+              checkColor: checkColor ?? Colors.black,
               onChanged: onChanged,
               value: value,
             ),
