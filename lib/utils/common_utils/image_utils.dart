@@ -49,6 +49,7 @@ class IconImageClass{
   Widget get timeClockIcon => const CustomSvgPictures.asset("$iconPath/time_clock.svg", fit: BoxFit.cover);
   Widget get toiletProfileIcon => const CustomSvgPictures.asset("$iconPath/toilet_profile.svg", fit: BoxFit.cover);
   Widget get userProfileIcon => const CustomSvgPictures.asset("$iconPath/user_profile.svg", fit: BoxFit.cover);
+  Widget get tailorProfileIcon => const CustomSvgPictures.asset("$iconPath/tailer_profile_icon.svg", fit: BoxFit.cover);
   Widget get acServiceIcon => const CustomSvgPictures.asset("$iconPath/ac_service.svg", fit: BoxFit.cover);
   Widget get cleaningIcon => const CustomSvgPictures.asset("$iconPath/cleaning.svg", fit: BoxFit.cover);
   Widget get plumbingIcon  => const CustomSvgPictures.asset("$iconPath/plumbing.svg", fit: BoxFit.cover);

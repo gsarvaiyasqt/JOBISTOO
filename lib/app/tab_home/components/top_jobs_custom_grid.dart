@@ -15,10 +15,8 @@ class _TopJobsCustomGridState extends State<TopJobsCustomGrid> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      // margin: EdgeInsets.all(12.sp),
       decoration: BoxDecoration(
         color: kLightGrayColor.withOpacity(0.16),
-        // color: Colors.red,
         borderRadius: BorderRadius.circular(10.sp),
       ),
       child: Padding(
@@ -37,7 +35,7 @@ class _TopJobsCustomGridState extends State<TopJobsCustomGrid> {
           ],
         ),
       ),
-    );;
+    );
   }
 }
 

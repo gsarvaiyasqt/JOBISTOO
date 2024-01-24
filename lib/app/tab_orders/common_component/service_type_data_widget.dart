@@ -10,7 +10,7 @@ class ServiceTypeDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final notSelectedItem = (ServiceListData.serviceListData.length - 1) != index;
+    final notSelectedItem = (ServiceListData.residentialPlumbingData.length - 1) != index;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -30,6 +30,15 @@ class ServiceTypeDataWidget extends StatelessWidget {
                 Text("\$${service?.count}" ?? "",style: CustomTextStyle.secondaryTextColorFont14W600),
                 SizedBox(height: 8.sp),
                 Text(service?.serText ?? "",style: CustomTextStyle.primaryTextColorFont14W300),
+                SizedBox(height: 8.sp,),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: SizedBox(
+                    height: 24.sp,
+                    width: 24.sp,
+                    child: ImageUtil.iconImageClass.crossArrowIconMain,
+                  ),
+                )
               ],
             ))
           ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobisto/app/tab_home/components/most_book_jobs_list.dart';
 import 'package:jobisto/app/tab_home/components/quick_home_repairs_list.dart';
 import 'package:jobisto/app/tab_home/components/top_jobs_custom_grid.dart';
+import 'package:jobisto/app/tab_home/route/home_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_info_title.dart';
 import 'package:jobisto/utils/utils.dart';
@@ -17,7 +18,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    print(4.88 * MediaQuery.of(context).size.height,);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -127,8 +127,17 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: JobsClass.jobsList.length,
               itemBuilder: (context, index) {
                 final jobsData = JobsClass.jobsList[index];
-                return TopJobsCustomGrid(
-                 jobsData: jobsData,
+                return GestureDetector(
+                  onTap: () {
+                    switch(index){
+                      case 0 :
+                        TabHomeRoute.goToTopJobDetailsPage(context);
+                       break;
+                    }
+                  },
+                  child: TopJobsCustomGrid(
+                   jobsData: jobsData,
+                  ),
                 );
               },
             ),
