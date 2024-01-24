@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:jobisto/app/tab_seller/route/tab_seller_route.dart';
 import 'package:jobisto/base/base.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
@@ -158,10 +159,15 @@ class _JobsApplyScreenState extends State<JobsApplyScreen> {
               
                       Expanded(child: Text("Select Portfolio",style: CustomTextStyle.semiBoldFont20Style,)),
               
-                      SizedBox(
-                        height: 30.sp,
-                        width: 30.sp, child: SvgPicture.asset("$iconPath/add.svg",colorFilter:  ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),)
-                        // CustomSvgPictures.asset("$iconPath/add.svg", fit: BoxFit.cover, color:  ),
+                      InkWell(
+                        onTap: () {
+                          TabSellerRoute.goToPortfolioPage(context);
+                        },
+                        child: SizedBox(
+                          height: 30.sp,
+                          width: 30.sp, child: SvgPicture.asset("$iconPath/add.svg",colorFilter:  ColorFilter.mode(kPrimaryColor, BlendMode.srcIn),)
+                          // CustomSvgPictures.asset("$iconPath/add.svg", fit: BoxFit.cover, color:  ),
+                        ),
                       )
                     ],
                   ),
