@@ -53,6 +53,10 @@ class OrdersClass{
     OrdersClass(
         request: "Requested for",
         category: "Pipe Repairing and Fittings",
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         price: 28.00,
         date: "1 Nov ‘23"
     ),
@@ -60,12 +64,20 @@ class OrdersClass{
     OrdersClass(
         request: "Requested for",
         category: "Cleaning",
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         price: 59.00,
         date: "1 Nov ‘23"
     ),
 
     OrdersClass(
         request: "Requested for",
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         category: "Pipe Repairing and Fittings",
         price: 99.00,
         date: "1 Nov ‘23"
@@ -77,6 +89,10 @@ class OrdersClass{
         name: "Jabari Osei",
         category: "AC Service",
         price: 45.00,
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         date: "5 Nov ‘23"
     ),
 
@@ -85,6 +101,10 @@ class OrdersClass{
         profilePic: "profile_2.png",
         name: "Rox Hardware",
         category: "AC Service",
+        jobsServiceData: JobsServiceData(
+            jobstype: JOBSTYPE.JOBS,
+            statustype: STATUSTYPE.COMPLETED
+        ),
         price: 99.00,
         date: "23 Nov ‘23"
     ),

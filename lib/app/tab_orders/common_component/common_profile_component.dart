@@ -4,12 +4,13 @@ class ProfileCommonComponent extends StatelessWidget {
   final Widget? icon;
   final String? profileName;
   final String? rating;
-  const ProfileCommonComponent({Key? key, this.icon, this.profileName, this.rating}) : super(key: key);
+  final Widget? actionIcon;
+  const ProfileCommonComponent({Key? key, this.icon, this.profileName, this.rating, this.actionIcon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if(icon != null)
         SizedBox(
@@ -41,7 +42,12 @@ class ProfileCommonComponent extends StatelessWidget {
               )
             ],
           ),
-        )
+        ),
+        if(actionIcon != null)
+          SizedBox(
+              height: 24.sp,
+              width: 24.sp,
+              child: actionIcon),
       ],
     );
   }

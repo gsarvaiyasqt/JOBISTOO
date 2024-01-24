@@ -11,6 +11,7 @@ import '../../../utils/utils.dart';
 import '../domain/dummy_models/portfolios_model.dart';
 import '../domain/dummy_models/services_list_model.dart';
 import '../domain/dummy_models/skilles_model.dart';
+import '../route/order_route.dart';
 class MyJobberProfilePage extends StatefulWidget {
   const MyJobberProfilePage({Key? key}) : super(key: key);
 
@@ -24,6 +25,10 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    final jobsServiceData = ModalRoute.of(context)?.settings.arguments as JobsServiceData?;
+
+
+    print("jobsServiceData.statustype ::::::::::::::: is ${jobsServiceData?.statustype}");
     return SafeArea(
       child: Scaffold(
         backgroundColor: kBlackColor,
@@ -129,6 +134,7 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
 
             ),
 
+            if(jobsServiceData?.statustype == null)
             SliverAppBar(
               leadingWidth: 0.0,
               pinned: true,
@@ -146,7 +152,16 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
               ),
 
             ),
-
+            if(jobsServiceData?.statustype != null)
+             SliverPadding(padding: EdgeInsets.symmetric(
+               horizontal: 20.sp),
+               sliver: SliverToBoxAdapter(
+                 child: Padding(
+                     padding: EdgeInsets.symmetric(vertical: 20.sp),
+                     child: Text("Services",style: CustomTextStyle.primaryTextColorFont20W600)),
+               ),
+             ), 
+              
             SliverPadding(
               padding: EdgeInsets.only(left: 20.sp,right: 20.sp,bottom: 50.sp),
               sliver: SliverList(delegate: SliverChildBuilderDelegate(
