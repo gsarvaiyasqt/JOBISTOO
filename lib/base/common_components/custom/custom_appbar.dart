@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
+import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/utils/utils.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   final double? height;
@@ -9,7 +10,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kBlackColor,
       alignment: Alignment.center,
       child: Stack(
         alignment: Alignment.center,

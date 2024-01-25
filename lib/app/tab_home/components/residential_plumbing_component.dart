@@ -40,11 +40,11 @@ class TopJobDetailsComponent extends StatelessWidget {
 
                     SizedBox(width: 5.sp,),
 
-                    Expanded(child: Text("${service?.jobberCount != null ? service?.jobberCount : ""} Jobber",style: CustomTextStyle.regularFont14Style,)),
+                    Expanded(child: Text("${service?.jobberCount ?? ""} Jobber",style: CustomTextStyle.regularFont14Style,)),
                     SizedBox(
                       height: 24.sp,
                       width: 24.sp,
-                      child: ImageUtil.iconImageClass.crossArrowIconMain,
+                      child: ImageUtil.iconImageClass.crossArrowIcon,
                     ),
                   ],
                 )

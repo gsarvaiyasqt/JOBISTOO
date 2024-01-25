@@ -31,7 +31,7 @@ class CustomJabAppbar extends StatelessWidget implements PreferredSizeWidget{
                   },
                   child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.sp,vertical: 8.sp),
-                                 decoration: BoxDecoration(
+                    decoration: BoxDecoration(
                     color: kBlackColor,
                     borderRadius: BorderRadius.circular(50.sp),
                     border: Border.all(

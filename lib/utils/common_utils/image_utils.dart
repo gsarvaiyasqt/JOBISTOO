@@ -38,8 +38,8 @@ class IconImageClass{
   Widget get completedIcon => const CustomSvgPictures.asset("$iconPath/completed.svg", fit: BoxFit.cover);
   Widget get confirmedJobIcon => const CustomSvgPictures.asset("$iconPath/confirmed_job.svg", fit: BoxFit.cover);
   Widget get createIcon => const CustomSvgPictures.asset("$iconPath/create.svg", fit: BoxFit.cover);
-  Widget get crossArrowIcon => const CustomSvgPictures.asset("$iconPath/cross_arrow.svg", fit: BoxFit.cover,color: kPrimaryColor,);
-  Widget get crossArrowIconMain => const CustomSvgPictures.asset("$iconPath/cross_arrow.svg", fit: BoxFit.cover,color: kSecondaryColor,);
+  Widget get crossArrowIcon => const CustomSvgPictures.asset("$iconPath/cross_arrow.svg", fit: BoxFit.cover,colorFilter: ColorFilter.mode(kPrimaryColor,BlendMode.srcIn));
+  Widget get crossArrowIconMain => const CustomSvgPictures.asset("$iconPath/cross_arrow.svg", fit: BoxFit.cover,colorFilter: ColorFilter.mode(Colors.white,BlendMode.srcIn));
   Widget get linkIcon => const CustomSvgPictures.asset("$iconPath/link.svg", fit: BoxFit.cover);
   Widget get locationIcon => const CustomSvgPictures.asset("$iconPath/location.svg", fit: BoxFit.cover);
   Widget get messageChatIcon => const CustomSvgPictures.asset("$iconPath/message_chat.svg", fit: BoxFit.cover);
@@ -69,7 +69,7 @@ class IconImageClass{
   Widget get cameraIcon =>  CustomSvgPictures.asset("$iconPath/camera.svg", fit: BoxFit.cover,width: 30.sp,height: 30.sp);
   Widget get galleryIcon => const CustomSvgPictures.asset("$iconPath/gallery.svg", fit: BoxFit.cover);
   Widget get nextArrowIcon => const CustomSvgPictures.asset("$iconPath/next_arrow.svg",fit: BoxFit.cover,);
-  Widget get logoutIcon => const CustomSvgPictures.asset("$iconPath/logoutt.svg",fit: BoxFit.cover,color: Color(0xffffffff),);
+  Widget get logoutIcon => const CustomSvgPictures.asset("$iconPath/logoutt.svg",fit: BoxFit.cover,colorFilter: ColorFilter.mode(kSecondaryColor,BlendMode.srcIn));
   Widget get deleteAccountIcon =>  CustomSvgPictures.asset("$iconPath/deleteAccountIcon.svg",fit: BoxFit.cover,);
   Widget get delete => CustomSvgPictures.asset("$iconPath/delete_all.svg",fit: BoxFit.cover,);
   Widget get upArrow => const CustomSvgPictures.asset("$iconPath/up_arrow.svg",fit: BoxFit.cover,);
@@ -106,7 +106,7 @@ class CustomSvgPictures extends StatelessWidget {
         this.height,
         this.fit = BoxFit.cover,
         this.alignment = Alignment.center,
-        this.color
+        this.color, this.colorFilter
       }) : super(key: key);
 
   final double? width;
@@ -114,6 +114,7 @@ class CustomSvgPictures extends StatelessWidget {
   final String assetName;
   final double? height;
   final BoxFit fit;
+  final ui.ColorFilter? colorFilter;
   final AlignmentGeometry alignment;
 
   @override
@@ -124,8 +125,9 @@ class CustomSvgPictures extends StatelessWidget {
       width: width,
       fit: fit,
       alignment: alignment,
+      colorFilter: colorFilter,
       // colorFilter: ColorFilter.mode(color ==  ? null : color , BlendMode.srcIn),
-      color: color,
+      // color: color,
       placeholderBuilder: (context) {
         return const SizedBox.shrink();
       },
