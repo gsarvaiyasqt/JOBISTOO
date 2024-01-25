@@ -26,6 +26,7 @@ class IconImageClass{
   Widget get managedJobsIcon => const CustomSvgPictures.asset("$iconPath/manage_jobs.svg",fit: BoxFit.cover,);
   Widget get acceptedIcon => const CustomSvgPictures.asset("$iconPath/accepted.svg", fit: BoxFit.cover);
   Widget get addIcon => const CustomSvgPictures.asset("$iconPath/add.svg", fit: BoxFit.cover);
+  Widget get threeDotIcon => const CustomSvgPictures.asset("$iconPath/three_dot.svg", fit: BoxFit.cover);
   Widget get swipeIcon => const CustomSvgPictures.asset("$iconPath/swipe.svg", fit: BoxFit.cover);
   Widget get backArrowIcon => CustomSvgPictures.asset("$iconPath/back_arrow.svg", fit: BoxFit.cover,height: 24.sp,width: 24.sp,);
   Widget get edit => CustomSvgPictures.asset("$iconPath/edit.svg", fit: BoxFit.cover,height: 24.sp,width: 24.sp,);

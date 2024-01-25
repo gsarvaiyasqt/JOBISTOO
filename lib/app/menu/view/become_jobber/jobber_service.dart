@@ -46,7 +46,7 @@ class _JobberServicesScreenState extends State<JobberServicesScreen> {
                       onTap: (){
                         Navigator.pop(context);
                       },
-                      centerText: "Business/ Firm",
+                      centerText: "Jobber Service",
                     ),
 
                     Expanded(
@@ -411,4 +411,54 @@ class _JobberServicesScreenState extends State<JobberServicesScreen> {
         )
     );
   }
+  Widget commonChip(){
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 5.sp),
+          padding: EdgeInsets.symmetric(horizontal: 20.sp,vertical: 8.sp),
+          decoration: BoxDecoration(
+            color: kLightGrayColor.withOpacity(0.16),
+            borderRadius: BorderRadius.circular(60.sp),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text("Hardware",style: CustomTextStyle.regularFont14Style,),
+
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("4.2",style: CustomTextStyle.regularFont14Style,),
+                  SizedBox(width: 5.sp),
+                  Container(
+                      margin: EdgeInsets.only(top: 2.sp),
+                      width: 14.sp,
+                      height: 14.sp,
+                      child: ImageUtil.iconImageClass.starIcon)
+                ],
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          right: 0,
+          top: 2,
+          child: Container(
+              height: 21.sp,
+              width: 21.sp,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle
+              ),
+              child: Padding(
+                padding:  EdgeInsets.all(3.sp),
+                child: CustomSvgPictures.asset("$iconPath/cancel.svg", fit: BoxFit.cover,color: kDarkGreyColor,),
+              )
+          ),
+        )
+      ],
+    );
+  }
+
 }

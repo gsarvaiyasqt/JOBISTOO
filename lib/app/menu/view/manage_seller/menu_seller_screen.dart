@@ -36,6 +36,7 @@ class _MenuSellerScreenState extends State<MenuSellerScreen> {
                     children: [
                       Row(
                         children: [
+
                           Expanded(
                             child: InkWell(
                               onTap: (){
@@ -85,99 +86,109 @@ class _MenuSellerScreenState extends State<MenuSellerScreen> {
                               ),
                             ),
                           ),
+
                           SizedBox(width: 10.sp),
 
                           Expanded(
                             child: Column(
                               children: [
-                                Container(
-                                  height: 120.sp,
-                                  width: double.infinity,
-                                  padding: EdgeInsets.only(left: 10.sp,right: 10.sp,top: 8.sp),
-                                  decoration: BoxDecoration(
-                                      color: kLightGrayColor.withOpacity(0.16),
-                                      borderRadius: BorderRadius.circular(10.sp)
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.bottomRight,
-                                        child: Container(
-                                            height: 35.sp,
-                                            width: 35.sp,
-                                            child: ImageUtil.iconImageClass.serviceIcon
+                                InkWell(
+                                  onTap: (){
+                                    MenuRoute.goToMyServicePage(context);
+                                  },
+                                  child: Container(
+                                    height: 120.sp,
+                                    width: double.infinity,
+                                    padding: EdgeInsets.only(left: 10.sp,right: 10.sp,top: 8.sp),
+                                    decoration: BoxDecoration(
+                                        color: kLightGrayColor.withOpacity(0.16),
+                                        borderRadius: BorderRadius.circular(10.sp)
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: Container(
+                                              height: 35.sp,
+                                              width: 35.sp,
+                                              child: ImageUtil.iconImageClass.serviceIcon
+                                          ),
                                         ),
-                                      ),
 
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text("5",style: CustomTextStyle.semiBoldFont20Style.copyWith(fontSize: 30.sp,color: kPrimaryColor)),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Expanded(child: Text("Services", style: CustomTextStyle.regularFont18Style)),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text("5",style: CustomTextStyle.semiBoldFont20Style.copyWith(fontSize: 30.sp,color: kPrimaryColor)),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Expanded(child: Text("Services", style: CustomTextStyle.regularFont18Style)),
 
-                                                    ImageUtil.iconImageClass.crossArrowIcon,
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
+                                                      ImageUtil.iconImageClass.crossArrowIcon,
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
 
                                 SizedBox(height: 10.sp),
 
-                                Container(
-                                  height: 120.sp,
-                                  width: double.infinity,
-                                  padding: EdgeInsets.only(left: 10.sp,right: 10.sp,top: 8.sp),
-                                  decoration: BoxDecoration(
-                                      color: kLightGrayColor.withOpacity(0.16),
-                                      borderRadius: BorderRadius.circular(10.sp)
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.bottomRight,
-                                        child: Container(
-                                            height: 35.sp,
-                                            width: 35.sp,
-                                            child: ImageUtil.iconImageClass.portfolioIcon
+                                InkWell(
+                                  onTap: (){
+                                    MenuRoute.goToMyDoneJobsPage(context);
+                                  },
+                                  child: Container(
+                                    height: 120.sp,
+                                    width: double.infinity,
+                                    padding: EdgeInsets.only(left: 10.sp,right: 10.sp,top: 8.sp),
+                                    decoration: BoxDecoration(
+                                        color: kLightGrayColor.withOpacity(0.16),
+                                        borderRadius: BorderRadius.circular(10.sp)
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: Container(
+                                              height: 35.sp,
+                                              width: 35.sp,
+                                              child: ImageUtil.iconImageClass.portfolioIcon
+                                          ),
                                         ),
-                                      ),
 
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text("2",style: CustomTextStyle.semiBoldFont20Style.copyWith(fontSize: 30.sp,color: kPrimaryColor)),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Expanded(child: Text("Portfolio", style: CustomTextStyle.regularFont18Style)),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text("2",style: CustomTextStyle.semiBoldFont20Style.copyWith(fontSize: 30.sp,color: kPrimaryColor)),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      Expanded(child: Text("Portfolio", style: CustomTextStyle.regularFont18Style)),
 
-                                                    ImageUtil.iconImageClass.crossArrowIcon,
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
+                                                      ImageUtil.iconImageClass.crossArrowIcon,
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
-
                               ],
                             ),
                           )

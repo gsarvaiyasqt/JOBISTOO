@@ -8,6 +8,7 @@ const Color kPrimaryColor = Color(0xffFEBE73);
 const Color kSecondaryColor = Color(0xffFFFFFF);
 const Color kTextSecondaryColor = Color(0xffFEBE73);
 const Color kTextPrimaryColor = Color(0xffFFFFFF);
+const Color kTextDarkColor = Color(0xff19212F);
 const Color kLowWhiteColor = Color(0xffA4A4A4);
 const Color kLightGrayColor = Color(0xff6F778B);
 const Color kDarkGreyColor = Color(0xff191C26);
