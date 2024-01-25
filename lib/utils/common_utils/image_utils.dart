@@ -89,6 +89,7 @@ class DummyImgClass{
   Widget get profilePic => const AssetsImagePictures(assetName: "$dummyImgPath/profile_pic.png",fit: BoxFit.cover,);
   Widget get profile11 => const AssetsImagePictures(assetName: "$dummyImgPath/profile_1.png",fit: BoxFit.cover,);
   Widget get profile22 => const AssetsImagePictures(assetName: "$dummyImgPath/profile_2.png",fit: BoxFit.cover,);
+  Widget get fiveStars => const AssetsImagePictures(assetName: "$dummyImgPath/five_stars.png",fit: BoxFit.cover,);
 
 }
 

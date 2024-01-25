@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobisto/app/tab_orders/common_component/common_profile_component.dart';
 import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
 import 'package:jobisto/app/tab_orders/route/order_route.dart';
+import 'package:jobisto/base/base.dart';
 import 'package:jobisto/base/common_components/custom/acc_and_rej_custom_botton.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/read_more_text_widget.dart';
@@ -21,6 +22,103 @@ class OrderDetailScreen extends StatefulWidget {
 }
 
 class _OrderDetailScreenState extends State<OrderDetailScreen> {
+
+  TextEditingController descriptionController = TextEditingController();
+
+
+  void showRatingsBottomSheet(BuildContext context)async{
+
+    final isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom;
+
+    showModalBottomSheet(
+      context: context,
+       isScrollControlled: true,
+       backgroundColor: kBackgroundColor,
+      builder: (context) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom,left: 20.sp,right: 20.sp,top: 35.sp),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    height: 20.sp,
+                    width: 20.sp,
+                  ),
+                  Text("Ratings",style: CustomTextStyle.primaryTextColorFont20W600,),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: SizedBox(
+                        width: 30.sp,
+                        height: 30.sp,
+                        child: ImageUtil.iconImageClass.cancelIcon),
+                  )
+                ],
+              ),
+              SizedBox(height: 33.sp),
+              GestureDetector(
+                onTap: () {
+                  TabOrderRoute.goToJobberProfilePage(context,JobsServiceData(
+                    statustype: STATUSTYPE.COMPLETED
+                  ));
+                },
+                child: ProfileCommonComponent(
+                  rating: "4.4",
+                  profileName: "Rox Hardware",
+                  icon: ImageUtil.dummyImgClass.profile11,
+                  actionIcon: ImageUtil.iconImageClass.crossArrowIcon,
+                ),
+              ),
+              SizedBox(height: 16.sp),
+              Container(
+                color: kLightGrayColor,
+                height: 1.sp,
+              ),
+              SizedBox(height: 30.sp),
+              Text("Share your thoughts on the service you received and help others find reliable professionals",
+                textAlign: TextAlign.center,
+                style: CustomTextStyle.primaryTextColorFont14W300,),
+              SizedBox(height: 6.sp),
+              Text("(Seller will be able to view these ratings after 2 - 3 weeks)", style: CustomTextStyle.primaryTextColorFont14W300,),
+              SizedBox(height: 29.sp),
+              Center(
+                child: SizedBox(
+                  height: 49.sp,
+                  child: ImageUtil.dummyImgClass.fiveStars,
+                ),
+              ),
+              SizedBox(height: 29.sp),
+              Text("Share your thoughts",style: CustomTextStyle.primaryTextColorFont14W400,),
+              SizedBox(height: 8.sp),
+              CustomDescriptionTextField(
+                  minLine: 3,
+                  maxLine: 4,
+                  controller: descriptionController, hint: "thoughts"),
+              SizedBox(height: 45.sp),
+              CustomButton(
+                btnText: "Submit",
+                btnColor: kPrimaryColor,
+                textStyle: CustomTextStyle.primaryTextColorFont16W600.copyWith(
+                  color: kBlackColor
+                ),
+              ),
+              SizedBox(height: 20.sp),
+            ],
+          ),
+        ),
+      );
+      },
+    );
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final jobsServiceData = ModalRoute.of(context)?.settings.arguments as JobsServiceData;
@@ -30,6 +128,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
     return SafeArea(
       bottom: false,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: kBlackColor,
         appBar: CustomJabAppbar(
           height: 226.sp,
@@ -342,6 +441,10 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.sp),
                   child: CustomButton(
+                    onTap: () {
+                      showRatingsBottomSheet(context);
+
+                    },
                     btnColor: kPrimaryColor,
                     textStyle: CustomTextStyle.blackSemiBoldFont16Style,
                     btnText: "Complete JOB",
