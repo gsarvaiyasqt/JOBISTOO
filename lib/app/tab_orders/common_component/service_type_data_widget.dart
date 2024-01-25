@@ -30,13 +30,12 @@ class ServiceTypeDataWidget extends StatelessWidget {
                 Text("\$${service?.count}" ?? "",style: CustomTextStyle.secondaryTextColorFont14W600),
                 SizedBox(height: 8.sp),
                 Text(service?.serText ?? "",style: CustomTextStyle.primaryTextColorFont14W300),
-                SizedBox(height: 8.sp,),
                 Align(
                   alignment: Alignment.centerRight,
                   child: SizedBox(
                     height: 24.sp,
                     width: 24.sp,
-                    child: ImageUtil.iconImageClass.crossArrowIconMain,
+                    child: ImageUtil.iconImageClass.crossArrowIcon,
                   ),
                 )
               ],

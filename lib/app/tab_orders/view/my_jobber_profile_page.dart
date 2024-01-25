@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobisto/app/tab/route/tab_route.dart';
+import 'package:jobisto/app/tab/view_model/dashboard_provider.dart';
 import 'package:jobisto/app/tab_orders/common_component/common_profile_component.dart';
 import 'package:jobisto/app/tab_orders/common_component/portfolios_widget.dart';
 import 'package:jobisto/app/tab_orders/common_component/service_type_data_widget.dart';
@@ -8,6 +10,7 @@ import 'package:jobisto/app/tab_seller/components/custom_gridview_job_details.da
 import 'package:jobisto/base/common_components/custom/custom_appbar.dart';
 import 'package:jobisto/base/common_components/custom/custom_tabbar.dart';
 import 'package:jobisto/utils/common_utils/enums.dart';
+import 'package:provider/provider.dart';
 
 import '../../../base/common_components/custom/acc_and_rej_custom_botton.dart';
 import '../../../base/common_components/custom/custom_message_button.dart';
@@ -32,7 +35,7 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
   Widget build(BuildContext context) {
     final jobsServiceData = ModalRoute.of(context)?.settings.arguments as JobsServiceData?;
 
-    print(jobsServiceData?.jobstype);
+    final tabProvider = context.read<TabIndexProvider>();
 
     return SafeArea(
       child: Scaffold(
@@ -40,6 +43,14 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
         bottomNavigationBar: jobsServiceData?.jobstype == JOBSTYPE.BUSINESS ?  Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.sp,vertical: 10.sp),
           child: CustomAcceptAndRejectButton(
+            onAcceptTap: () {
+              TabRoute.goToTabPage(context);
+              tabProvider.tabChangeIndex(index: 2);
+            },
+            onRejectTap: () {
+              TabRoute.goToTabPage(context);
+              tabProvider.tabChangeIndex(index: 2);
+            },
             rejectIcon: ImageUtil.iconImageClass.rejectedIcon,
             rejectText: "Reject",
             rejectLoading: false,

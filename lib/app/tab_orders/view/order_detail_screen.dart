@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobisto/app/tab/view_model/dashboard_provider.dart';
 import 'package:jobisto/app/tab_orders/common_component/common_profile_component.dart';
 import 'package:jobisto/app/tab_orders/common_component/custom_job_app_bar.dart';
 import 'package:jobisto/app/tab_orders/route/order_route.dart';
@@ -8,10 +9,12 @@ import 'package:jobisto/base/common_components/custom/acc_and_rej_custom_botton.
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/read_more_text_widget.dart';
 import 'package:jobisto/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 import '../../../base/common_components/custom/custom_button.dart';
 import '../../../base/common_components/custom/custom_message_button.dart';
 import '../../../utils/common_utils/enums.dart';
+import '../../tab/route/tab_route.dart';
 import '../domain/dummy_models/plumbing_request_model.dart';
 import '../domain/dummy_models/skilles_model.dart';
 class OrderDetailScreen extends StatefulWidget {
@@ -29,6 +32,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
   void showRatingsBottomSheet(BuildContext context)async{
 
     final isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom;
+    final tabProvider = context.read<TabIndexProvider>();
 
     showModalBottomSheet(
       context: context,
@@ -102,6 +106,11 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                   controller: descriptionController, hint: "thoughts"),
               SizedBox(height: 45.sp),
               CustomButton(
+                onTap: () {
+                  tabProvider.tabChangeIndex(index: 2);
+                  TabRoute.goToTabPage(context);
+
+                },
                 btnText: "Submit",
                 btnColor: kPrimaryColor,
                 textStyle: CustomTextStyle.primaryTextColorFont16W600.copyWith(
