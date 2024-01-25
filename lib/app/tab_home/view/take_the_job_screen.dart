@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:jobisto/app/tab/view_model/dashboard_provider.dart';
 import 'package:jobisto/app/tab_home/route/home_route.dart';
 import 'package:jobisto/app/tab_orders/common_component/common_profile_component.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.dart';
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 import '../../tab_seller/domain/dummy_models/job_request_model.dart';
 
@@ -18,6 +20,8 @@ class TakeTheJobScreen extends StatefulWidget {
 class _TakeTheJobScreenState extends State<TakeTheJobScreen> {
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -179,8 +183,8 @@ class _TakeTheJobScreenState extends State<TakeTheJobScreen> {
                       onTap: () {
                         TabHomeRoute.goToJobConfirmedPage(context);
                       },
-                      btnText: "\$50.00",
-                      textStyle: CustomTextStyle.semiBoldFont16Style,
+                      btnText: "Confirm",
+                      textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: kBlackColor),
                     ),
                   )
                 ],

@@ -192,6 +192,7 @@ class _RequirementScreenState extends State<RequirementScreen> {
                   TabHomeRoute.goToTakeTheJobPage(context);
                 },
                 btnText: "Next",
+                textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: kBlackColor),
               ),
             ),
 
