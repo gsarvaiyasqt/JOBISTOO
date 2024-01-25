@@ -8,7 +8,8 @@ class CommonAppBar extends StatefulWidget {
   final GestureTapCallback? onTap;
   final String? centerText;
   final Widget? child;
-   CommonAppBar({super.key, this.onTap, this.centerText, this.child});
+  final Color? colorLeft;
+   CommonAppBar({super.key, this.onTap, this.centerText, this.child,this.colorLeft});
 
   @override
   State<CommonAppBar> createState() => _CommonAppBarState();
@@ -28,6 +29,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
               onTap: widget.onTap,
               child: Container(
                 decoration: BoxDecoration(
+                  color: widget.colorLeft ?? Colors.transparent,
                   border: Border.all(
                       color: kLightGrayColor
                   ),
