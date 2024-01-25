@@ -62,9 +62,7 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
                             final listData = bookServiceList[index];
                             return GestureDetector(
                               onTap: () {
-                                if(index.isEven){
-                                    TabHomeRoute.goToMyJobistoProfilePage(context);
-                                }
+                                TabHomeRoute.goToMyJobistoProfilePage(context);
                               },
                               child: BookingServiceListComponent(
                                 bookServiceData: listData,
@@ -111,6 +109,9 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.sp),
                 child: CustomButton(
+                  onTap: () {
+                    TabHomeRoute.goToCreateJobPage(context);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

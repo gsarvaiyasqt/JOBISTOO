@@ -65,20 +65,20 @@ class _JobDoneDetailsState extends State<JobDoneDetails> {
 
               SizedBox(height: 20.sp),
 
-              Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 20.sp),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
+                  padding:  EdgeInsets.symmetric(horizontal: 20.sp),
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
+                
                     Row(
                       children: [
                         Expanded(child: Text("Home Paint"?? "",style: CustomTextStyle.regularFont18Style,)),
                       ],
                     ),
-
+                
                     SizedBox(height: 8.sp,),
-
+                
                     Row(
                       children: [
                         Row(
@@ -92,23 +92,23 @@ class _JobDoneDetailsState extends State<JobDoneDetails> {
                             ),
                           ],
                         ),
-
+                
                         Expanded(
                           child: Row(
                             children: [
                               ImageUtil.iconImageClass.timeClockIcon,
-
+                
                               SizedBox(width: 5.sp),
-
+                
                               Text("2 days" ?? "",style: CustomTextStyle.regularFont12Style.copyWith(color: kSecondaryColor.withOpacity(0.80)),),
                             ],
                           ),
                         )
                       ],
                     ),
-
+                
                     SizedBox(height: 15.sp,),
-
+                
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -130,18 +130,18 @@ class _JobDoneDetailsState extends State<JobDoneDetails> {
                         )
                       ],
                     ),
-
+                
                     SizedBox(height: 15.sp),
-
+                
                     Text("Description",style: CustomTextStyle.semiBoldFont20Style,),
-
+                
                     SizedBox(height: 10.sp,),
-
+                
                     Text("At JOBISTO, we specialize in delivering exceptional plumbing system installations tailored to meet the unique needs of homeowners. Our comprehensive services cover every aspect, from meticulous design and planning to the installation of water supply lines, drainage systems, gas lines, and fixtures. Our certified technicians ensure the safe and precise installation of gas lines for various appliances, and we handle fixture installations with precision to minimize the risk of leaks.",
                       style: CustomTextStyle.regularFont18Style.copyWith(color: kSecondaryColor.withOpacity(0.80)),
                     ),
-
-
+                
+                
                   ],
                 ),
               ),
