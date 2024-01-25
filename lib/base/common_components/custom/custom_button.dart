@@ -17,8 +17,9 @@ class CustomButton extends StatefulWidget {
   final TextStyle? textStyle;
   final GestureTapCallback? onTap;
   final Widget? child;
+  final BoxBorder? border;
 
-  const CustomButton({Key? key, this.btnText, this.isLoading, this.isBoxShadow = true ,this.btnPadding, this.btnColor, this.circleShape, this.onTap, this.radius, this.textStyle, this.showArrow, this.child}) : super(key: key);
+  const CustomButton({Key? key, this.btnText, this.isLoading, this.isBoxShadow = true ,this.btnPadding, this.btnColor, this.circleShape, this.onTap, this.radius, this.textStyle, this.showArrow, this.child, this.border}) : super(key: key);
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -46,8 +47,9 @@ class _CustomButtonState extends State<CustomButton> {
                   blurRadius: 30,
                   spreadRadius: 0,
                   color: kBlackColor.withOpacity(0.25)
-              ) : BoxShadow(color: Colors.transparent)
-            ]
+              ) : BoxShadow(color: Colors.transparent),
+            ],
+          border: widget.border
 
         ),
         child: widget.isLoading ==  true ? const Loading() :

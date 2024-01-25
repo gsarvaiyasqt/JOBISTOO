@@ -18,7 +18,7 @@ class ImageUtil{
 
 class LogoImage {
   Widget get appLogo => const CustomSvgPictures.asset("$logoPath/logo.svg",fit: BoxFit.cover,);
-  Widget get subLogo => CustomSvgPictures.asset("$logoPath/sub_logo.svg",height: 504.sp,width: 358.sp,alignment: Alignment.center,);
+  Widget get subLogo => CustomSvgPictures.asset("$logoPath/sub_logo.svg",height: 504.sp,width: 358.sp,alignment: Alignment.center,fit: BoxFit.contain,);
 }
 
 class IconImageClass{

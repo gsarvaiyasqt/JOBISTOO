@@ -40,6 +40,8 @@ class Routes {
     TabHomeRoute.topJobDetailsRoute:(context) => TabHomeRoute.topJobDetailsChild,
     TabHomeRoute.bookServiceDetailsRoute:(context) => TabHomeRoute.bookServiceDetailsChild,
     TabHomeRoute.bookServiceRoute:(context) => TabHomeRoute.bookServiceChild,
-    TabHomeRoute.myJobistoProfileRoute:(context) => TabHomeRoute.myJobistoProfileChild
+    TabHomeRoute.myJobistoProfileRoute:(context) => TabHomeRoute.myJobistoProfileChild,
+    TabHomeRoute.createJobScreenRoute:(context) => TabHomeRoute.createJobScreenChild,
+    TabHomeRoute.requirementScreenRoute:(context) => TabHomeRoute.requirementScreenChild
   };
 }
