@@ -23,7 +23,15 @@ class Routes {
     TabOrderRoute.jobberTalkRoute : (context) => TabOrderRoute.jobberTalkChild,
     MenuRoute.jobberBusinessRoute:(context) => MenuRoute.jobberServiceChild,
     MenuRoute.jobberServiceRoute:(context) => MenuRoute.jobberBusinessChild,
+
     MenuRoute.menuBusinessRoute:(context) => MenuRoute.menuBusinessChild,
+    MenuRoute.myBusinessServiceRoute:(context) => MenuRoute.myBusinessServiceChild,
+    MenuRoute.myJobistoTeamRoute:(context) => MenuRoute.myJobistoTeamChild,
+    MenuRoute.myJobistoProfileRoute:(context) => MenuRoute.myJobistoProfileChild,
+    MenuRoute.myBusinessServiceRoute:(context) => MenuRoute.myBusinessServiceChild,
+    MenuRoute.addProductScreenRoute:(context) => MenuRoute.addProductScreenChild,
+    MenuRoute.myProductScreenRoute:(context) => MenuRoute.myProductScreenChild,
+
     MenuRoute.menuSellerRoute:(context) => MenuRoute.menuSellerChild,
     MenuRoute.myJobistoRoute:(context) => MenuRoute.myJobistoChild,
     MenuRoute.myServiceRoute:(context) => MenuRoute.myServiceChild,
