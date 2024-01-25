@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobisto/app/menu/route/menu_route.dart';
 import 'package:jobisto/app/tab_home/components/jobber_service_profile_button.dart';
 import 'package:jobisto/app/tab_home/components/jobber_service_profile_widget.dart';
+import 'package:jobisto/app/tab_home/route/home_route.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar.dart';
 import 'package:jobisto/utils/utils.dart';
 import '../../../base/common_components/custom/custom_tabbar.dart';
@@ -30,6 +31,9 @@ class _MyJobistoProfileState extends State<MyJobistoProfile> {
         bottomNavigationBar:  Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.sp,vertical: 10.sp),
           child: JobberServiceProfileButton(
+            onTapForSecondButton: () {
+              TabHomeRoute.goToRequirementPage(context);
+            },
             rejectText: "\$100.00",
             rejectLoading: false,
             acceptLoading: false,
