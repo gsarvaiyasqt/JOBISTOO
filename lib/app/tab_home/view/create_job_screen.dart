@@ -138,40 +138,23 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
                       ),
               
                       SizedBox(height: 10.sp),
-              
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 76.sp,
-                              padding: EdgeInsets.symmetric(horizontal: 8.sp),
-                              decoration: BoxDecoration(
-                                border: Border.all(color: kLightGrayColor),
-                                borderRadius: BorderRadius.circular(12.sp),
-                              ),
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount: 5,
-                                itemBuilder: (context, index) {
-                                  return commonChip();
-                                },
-                              ),
-                            ),
-                          ),
-              
-                          SizedBox(width: 10.sp),
-              
-                          Container(
-                            height: 50.sp,
-                            width: 50.sp,
-                            padding: EdgeInsets.all(8.sp),
-                            decoration: BoxDecoration(
-                              color: kLightGrayColor.withOpacity(0.16.sp),
-                              shape: BoxShape.circle,
-                            ),
-                            child: ImageUtil.iconImageClass.addIcon,
-                          )
-                        ],
+
+
+
+                      Container(
+                        height: 54.sp,
+                        padding: EdgeInsets.symmetric(horizontal: 8.sp),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: kLightGrayColor),
+                          borderRadius: BorderRadius.circular(12.sp),
+                        ),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (context, index) {
+                            return commonChip();
+                          },
+                        ),
                       ),
               
                       SizedBox(height: 20.sp,),
@@ -304,6 +287,39 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
                         },
                         headerText: "Upload Logo",
                       ),
+
+                      SizedBox(height: 20.sp),
+
+                      Row(
+                        children: [
+                          Text("Terms & Conditions",style: CustomTextStyle.regularFont16Style,),
+                          Text("*",style: CustomTextStyle.regularFont16Style.copyWith(color: Colors.red),),
+                        ],
+                      ),
+
+                      SizedBox(height: 10.sp),
+
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 7.sp,vertical: 17.sp),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.sp),
+                          border: Border.all(
+                            color: kLightGrayColor
+                          )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Lorem ipsum dolor sit amet consectetur.",style: CustomTextStyle.lightTextFieldStyle,),
+
+                            Text("Dignissim ut amet lorem turpis diam.",style: CustomTextStyle.lightTextFieldStyle,),
+
+                            Text("Phasellus netus neque tincidunt diam lectus ultrices porta et nunc. ",style: CustomTextStyle.lightTextFieldStyle,)
+
+
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -351,6 +367,7 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
 
   Widget commonChip(){
     return Stack(
+      alignment: Alignment.center,
       children: [
         Container(
           margin: EdgeInsets.symmetric(vertical: 8.sp,horizontal: 5.sp),
@@ -359,19 +376,14 @@ class _CreateJobScreenState extends State<CreateJobScreen> {
             color: kLightGrayColor.withOpacity(0.16),
             borderRadius: BorderRadius.circular(60.sp),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text("Hardware",style: CustomTextStyle.regularFont14Style,),
-            ],
-          ),
+          child: Text("Hardware",style: CustomTextStyle.regularFont14Style,),
         ),
         Positioned(
-          right: 0,
-          top: 2,
+          right: 5.sp,
+          top: 5.sp,
           child: Container(
-              height: 21.sp,
-              width: 21.sp,
+              height: 15.sp,
+              width: 15.sp,
               decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle

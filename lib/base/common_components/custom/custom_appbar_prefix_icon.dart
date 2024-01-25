@@ -16,7 +16,7 @@ class _CustomAppbarPrefixIconState extends State<CustomAppbarPrefixIcon> {
       child: Row(
         children: [
           SizedBox(width: 20.sp,),
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },

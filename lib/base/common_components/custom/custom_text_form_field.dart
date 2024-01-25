@@ -44,7 +44,7 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
     return  Column(
       children: [
         Container(
-          height: 50,
+          height: 54.sp,
           alignment: Alignment.center,
           decoration: BoxDecoration(
               border: Border.all(color: kLightGrayColor,width: 1.sp),
@@ -80,7 +80,7 @@ class _CustomDescriptionTextField extends State<CustomTextField> {
                           errorStyle: const TextStyle(height: 0,color: Colors.transparent,fontSize: 0),
                           border: InputBorder.none,
                           hintText: "",
-                          contentPadding: EdgeInsets.only(left: 15.sp)
+                          contentPadding: EdgeInsets.only(left: 15.sp,bottom: 5.sp)
                       ),
                     ),
                   ),
