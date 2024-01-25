@@ -81,7 +81,7 @@ class IconImageClass{
 }
 
 class GraphicsClass{
-  Widget get jobConfirmBg => const CustomSvgPictures.asset("$graphicsPath/job_confirm_bg.png", fit: BoxFit.cover);
+  Widget get jobConfirmBg => const AssetsImagePictures(assetName: "$graphicsPath/job_confirm_bg.png", fit: BoxFit.contain);
   Widget get backGroundImage  => const AssetsImagePictures(assetName: "$graphicsPath/bg_img.png",fit: BoxFit.cover,height: double.infinity,width: double.infinity,);
   Widget get settingsBg => const AssetsImagePictures(assetName: "$graphicsPath/Settings_bg.png",fit: BoxFit.cover,);
 
