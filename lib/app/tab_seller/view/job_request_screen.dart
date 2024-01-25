@@ -28,191 +28,205 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
         automaticallyImplyLeading: false,
       ),
       body: CustomBackGround(
-        childBody: Stack(
-          alignment: Alignment.bottomRight,
+        childBody: Column(
           children: [
 
-            SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.sp),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+            Expanded(
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
 
-                      Row(
-                        children: [
-
-                          Container(
-                            height: 64.sp,
-                            width: 64.sp,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: kSecondaryColor
-                              )
-                            ),
-                            child: ImageUtil.dummyImgClass.profilePic,
-                          ),
-
-                          SizedBox(width: 20.sp,),
-
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Jabari Osei",style: CustomTextStyle.regularFont18Style,),
-
-                                Row(
-                                  children: [
-
-                                    SizedBox(
-                                      height: 18.sp,
-                                      width: 18.sp,
-                                      child: ImageUtil.iconImageClass.locationIcon,
-                                    ),
-
-                                    Text("Nairobi, Kenya",style: CustomTextStyle.regularFont14Style,)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-
-                          SizedBox(
-                              height: 18.sp,
-                              width: 18.sp,
-                              child: ImageUtil.iconImageClass.pendingClock),
-
-                          SizedBox(width: 6.sp,),
-
-                          Text("Pending",style: CustomTextStyle.yellowSemiBoldFont14Style.copyWith(color: const Color(0xffF9A600)),)
-                        ],
-                      ),
-
-                      SizedBox(height: 24.sp,),
-
-                      Row(
-                        children: [
-                          Expanded(child: Text("Services (2)",style: CustomTextStyle.semiBoldFont20Style,)),
-
-                          SizedBox(
-                              height: 24.sp,
-                              width: 24.sp,
-                              child: ImageUtil.iconImageClass.upArrow)
-                        ],
-                      ),
-
-                      SizedBox(height: 15.sp,),
-
-                      ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: ServiceClass.serviceList.length,
-                        itemBuilder: (context, index) {
-                          final serviceData = ServiceClass.serviceList[index];
-                        return  ServicesList(
-                          serviceData: serviceData,
-                          totalLength: ServiceClass.serviceList,
-                          index: index,
-                        );
-                      },),
-
-                      SizedBox(
-                        height: 30.sp,
-                      ),
-
-                      Row(
-                        children: [
-
-                          Expanded(child: Text("Product (1)",style: CustomTextStyle.semiBoldFont20Style,)),
-
-                          SizedBox(
-                            height: 24.sp,
-                            width: 24.sp,
-                            child: ImageUtil.iconImageClass.downArrow,
-                          )
-                        ],
-                      ),
-
-                      SizedBox(
-                        height: 30.sp,
-                      ),
-
-                      Text("Client Requirements",style: CustomTextStyle.semiBoldFont20Style,),
-
-                      SizedBox(height: 20.sp,),
-
-                      Container(
-                        padding: EdgeInsets.all(12.sp),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: kLightGrayColor.withOpacity(0.17),
-                        ),
+                  SafeArea(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                      child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("JOB Detail",style: CustomTextStyle.primaryTextColorFont14W400,),
-                            SizedBox(height: 8.sp),
+
                             Row(
                               children: [
-                                Flexible(child: Text("Lorem ipsum dolor sit amet consectetur. Dignissim ut amet lorem turpis diam. Phasellus netus neque tincidunt diam lectus ultrices porta et nunc. ",style: CustomTextStyle.primaryTextColorFont18W400,)),
+
+                                Container(
+                                  height: 64.sp,
+                                  width: 64.sp,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: kSecondaryColor
+                                    )
+                                  ),
+                                  child: ImageUtil.dummyImgClass.profilePic,
+                                ),
+
+                                SizedBox(width: 20.sp,),
+
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Jabari Osei",style: CustomTextStyle.regularFont18Style,),
+
+                                      Row(
+                                        children: [
+
+                                          SizedBox(
+                                            height: 18.sp,
+                                            width: 18.sp,
+                                            child: ImageUtil.iconImageClass.locationIcon,
+                                          ),
+
+                                          Text("Nairobi, Kenya",style: CustomTextStyle.regularFont14Style,)
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+
+                                SizedBox(
+                                    height: 18.sp,
+                                    width: 18.sp,
+                                    child: ImageUtil.iconImageClass.pendingClock),
+
+                                SizedBox(width: 6.sp,),
+
+                                Text("Pending",style: CustomTextStyle.yellowSemiBoldFont14Style.copyWith(color: const Color(0xffF9A600)),)
                               ],
                             ),
-                            SizedBox(height: 16.sp),
-                            Container(
-                              height: 1.sp,
-                              color: kLightGrayColor.withOpacity(0.5),
+
+                            SizedBox(height: 24.sp,),
+
+                            Row(
+                              children: [
+                                Expanded(child: Text("Services (2)",style: CustomTextStyle.semiBoldFont20Style,)),
+
+                                SizedBox(
+                                    height: 24.sp,
+                                    width: 24.sp,
+                                    child: ImageUtil.iconImageClass.upArrow)
+                              ],
                             ),
 
                             SizedBox(height: 15.sp,),
-                            Text("JOB Location",style: CustomTextStyle.primaryTextColorFont14W400,),
-                            SizedBox(height: 8.sp),
+
+                            ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: ServiceClass.serviceList.length,
+                              itemBuilder: (context, index) {
+                                final serviceData = ServiceClass.serviceList[index];
+                              return  ServicesList(
+                                serviceData: serviceData,
+                                totalLength: ServiceClass.serviceList,
+                                index: index,
+                              );
+                            },),
+
+                            SizedBox(
+                              height: 30.sp,
+                            ),
+
                             Row(
                               children: [
-                                Flexible(child: Text("Nairobi, Kenya",style: CustomTextStyle.primaryTextColorFont18W400,)),
+
+                                Expanded(child: Text("Product (1)",style: CustomTextStyle.semiBoldFont20Style,)),
+
+                                SizedBox(
+                                  height: 24.sp,
+                                  width: 24.sp,
+                                  child: ImageUtil.iconImageClass.downArrow,
+                                )
                               ],
                             ),
-                            SizedBox(height: 16.sp),
+
+                            SizedBox(
+                              height: 30.sp,
+                            ),
+
+                            Text("Client Requirements",style: CustomTextStyle.semiBoldFont20Style,),
+
+                            SizedBox(height: 20.sp,),
+
                             Container(
-                              height: 1.sp,
-                              color: kLightGrayColor.withOpacity(0.5),
+                              padding: EdgeInsets.all(12.sp),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: kLightGrayColor.withOpacity(0.17),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("JOB Detail",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                  SizedBox(height: 8.sp),
+                                  Row(
+                                    children: [
+                                      Flexible(child: Text("Lorem ipsum dolor sit amet consectetur. Dignissim ut amet lorem turpis diam. Phasellus netus neque tincidunt diam lectus ultrices porta et nunc. ",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16.sp),
+                                  Container(
+                                    height: 1.sp,
+                                    color: kLightGrayColor.withOpacity(0.5),
+                                  ),
+
+                                  SizedBox(height: 15.sp,),
+                                  Text("JOB Location",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                  SizedBox(height: 8.sp),
+                                  Row(
+                                    children: [
+                                      Flexible(child: Text("Nairobi, Kenya",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16.sp),
+                                  Container(
+                                    height: 1.sp,
+                                    color: kLightGrayColor.withOpacity(0.5),
+                                  ),
+                                  SizedBox(height: 15.sp,),
+                                  Text("Expected Time",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                  SizedBox(height: 8.sp),
+                                  Row(
+                                    children: [
+                                      Flexible(child: Text("2 Days",style: CustomTextStyle.primaryTextColorFont18W400,)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16.sp),
+                                  Container(
+                                    height: 1.sp,
+                                    color: kLightGrayColor.withOpacity(0.5),
+                                  ),
+                                  SizedBox(height: 16.sp),
+                                  Text("Skills",style: CustomTextStyle.primaryTextColorFont14W400,),
+                                  SizedBox(height: 8.sp),
+                                  Wrap(
+                                    spacing: 8.sp,
+                                    children: List.generate(
+                                        ServiceClass.serviceList.length, (index) {
+                                      return ClipRRect(
+                                        borderRadius: BorderRadius.circular(10.sp),
+                                        child: Image.asset("$dummyImgPath/${ServiceClass.serviceList[index].img}",height: 54.sp,width: 54.sp,fit: BoxFit.cover,)
+                                      );
+                                    }),
+                                  ),
+                                ],
+                              ),
                             ),
-                            SizedBox(height: 15.sp,),
-                            Text("Expected Time",style: CustomTextStyle.primaryTextColorFont14W400,),
-                            SizedBox(height: 8.sp),
-                            Row(
-                              children: [
-                                Flexible(child: Text("2 Days",style: CustomTextStyle.primaryTextColorFont18W400,)),
-                              ],
-                            ),
-                            SizedBox(height: 16.sp),
-                            Container(
-                              height: 1.sp,
-                              color: kLightGrayColor.withOpacity(0.5),
-                            ),
-                            SizedBox(height: 16.sp),
-                            Text("Skills",style: CustomTextStyle.primaryTextColorFont14W400,),
-                            SizedBox(height: 8.sp),
-                            Wrap(
-                              spacing: 8.sp,
-                              children: List.generate(
-                                  ServiceClass.serviceList.length, (index) {
-                                return ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.sp),
-                                  child: Image.asset("$dummyImgPath/${ServiceClass.serviceList[index].img}",height: 54.sp,width: 54.sp,fit: BoxFit.cover,)
-                                );
-                              }),
-                            ),
+
+                            SizedBox(
+                              height: 170.sp,
+                            )
                           ],
                         ),
                       ),
-
-                      SizedBox(
-                        height: 170.sp,
-                      )
-                    ],
+                    ),
                   ),
-                ),
+
+                  CustomMessageButton(
+                    margin: EdgeInsets.only(
+                      bottom: 10.sp,
+                      right: 20.sp
+                    ),
+                  )
+                ],
               ),
             ),
 
@@ -232,13 +246,6 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
                 ],
               ),
             ),
-
-            CustomMessageButton(
-              margin: EdgeInsets.only(
-                bottom: 100.sp,
-                right: 20.sp
-              ),
-            )
           ],
         ),
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jobisto/app/tab/route/tab_route.dart';
+import 'package:jobisto/app/tab/view_model/dashboard_provider.dart';
 import 'package:jobisto/app/tab_seller/components/custom_jobs_apply_details.dart';
 import 'package:jobisto/app/tab_seller/components/selected_portfolio_list.dart';
 import 'package:jobisto/app/tab_seller/domain/dummy_models/portfolio_model.dart';
@@ -6,6 +8,7 @@ import 'package:jobisto/base/common_components/custom/custom_appbar_prefix_icon.
 import 'package:jobisto/base/common_components/custom/custom_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 class JobsApplyScreen extends StatefulWidget {
   const JobsApplyScreen({super.key});
@@ -17,6 +20,7 @@ class JobsApplyScreen extends StatefulWidget {
 class _JobsApplyScreenState extends State<JobsApplyScreen> {
   @override
   Widget build(BuildContext context) {
+    final tabProvider = context.read<TabIndexProvider>();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -63,6 +67,10 @@ class _JobsApplyScreenState extends State<JobsApplyScreen> {
               padding:
                   EdgeInsets.only(left: 20.sp, right: 20.sp, bottom: 30.sp),
               child: CustomButton(
+                onTap: () {
+                  TabRoute.goToTabPage(context);
+                  tabProvider.tabChangeIndex(index: 1);
+                },
                 btnText: "Send",
                 textStyle: CustomTextStyle.semiBoldFont16Style
                     .copyWith(color: Colors.black),
