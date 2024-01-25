@@ -4,6 +4,7 @@ import 'package:jobisto/app/tab_orders/common_component/common_profile_component
 import 'package:jobisto/app/tab_orders/common_component/portfolios_widget.dart';
 import 'package:jobisto/app/tab_orders/common_component/service_type_data_widget.dart';
 import 'package:jobisto/app/tab_orders/common_component/skills_component_widget.dart';
+import 'package:jobisto/app/tab_seller/components/custom_gridview_job_details.dart';
 import 'package:jobisto/base/common_components/custom/custom_appbar.dart';
 import 'package:jobisto/base/common_components/custom/custom_tabbar.dart';
 import 'package:jobisto/utils/common_utils/enums.dart';
@@ -11,6 +12,7 @@ import 'package:jobisto/utils/common_utils/enums.dart';
 import '../../../base/common_components/custom/acc_and_rej_custom_botton.dart';
 import '../../../base/common_components/custom/custom_message_button.dart';
 import '../../../utils/utils.dart';
+import '../../tab_seller/domain/dummy_models/job_details_model.dart';
 import '../domain/dummy_models/portfolios_model.dart';
 import '../domain/dummy_models/services_list_model.dart';
 import '../domain/dummy_models/skilles_model.dart';
@@ -30,8 +32,8 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
   Widget build(BuildContext context) {
     final jobsServiceData = ModalRoute.of(context)?.settings.arguments as JobsServiceData?;
 
+    print(jobsServiceData?.jobstype);
 
-    print("jobsServiceData.statustype ::::::::::::::: is ${jobsServiceData?.jobstype}");
     return SafeArea(
       child: Scaffold(
         backgroundColor: kBlackColor,
@@ -69,6 +71,16 @@ class _MyJobberProfilePageState extends State<MyJobberProfilePage> {
                         profileName: "Jabari Osei",
                         rating: "4.2",
                       ),
+                    ),
+                  ),
+
+                  if(jobsServiceData?.jobstype == JOBSTYPE.BUSINESS)
+                  SliverToBoxAdapter(child: SizedBox(height: 23.sp,)),
+                  if(jobsServiceData?.jobstype == JOBSTYPE.BUSINESS)
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                    sliver: SliverToBoxAdapter(
+                      child: CustomGridForJobDetails()
                     ),
                   ),
 

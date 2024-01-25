@@ -61,7 +61,9 @@ class _CustomGridForJobDetailsState extends State<CustomGridForJobDetails> {
 
                       Text(
                         jobs.firstText ?? "",
-                        style: index != 3 ? CustomTextStyle.regularFont16Style : CustomTextStyle.semiBoldFont16Style.copyWith(color: kPrimaryColor,decoration: TextDecoration.underline,decorationColor: kPrimaryColor, ),
+                        style: index != 3 ? CustomTextStyle.regularFont16Style.copyWith(
+                          fontSize: 13.sp
+                        ) : CustomTextStyle.semiBoldFont16Style.copyWith(color: kPrimaryColor,decoration: TextDecoration.underline,decorationColor: kPrimaryColor, ),
                       ),
                       jobs.secondText != null ?
                       Text(jobs.secondText ?? "",style: CustomTextStyle.semiBoldFont20Style.copyWith(color: kPrimaryColor),)
