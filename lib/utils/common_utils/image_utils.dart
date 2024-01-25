@@ -23,6 +23,8 @@ class LogoImage {
 
 class IconImageClass{
   Widget get pendingClock => const CustomSvgPictures.asset("$iconPath/pending_clock.svg",fit: BoxFit.cover,);
+  Widget get productIcon => const CustomSvgPictures.asset("$iconPath/product.svg",fit: BoxFit.cover,);
+  Widget get resourceIcon => const CustomSvgPictures.asset("$iconPath/resource.svg",fit: BoxFit.cover,);
   Widget get managedJobsIcon => const CustomSvgPictures.asset("$iconPath/manage_jobs.svg",fit: BoxFit.cover,);
   Widget get acceptedIcon => const CustomSvgPictures.asset("$iconPath/accepted.svg", fit: BoxFit.cover);
   Widget get addIcon => const CustomSvgPictures.asset("$iconPath/add.svg", fit: BoxFit.cover);
