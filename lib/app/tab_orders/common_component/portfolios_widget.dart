@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobisto/app/menu/route/menu_route.dart';
+import 'package:jobisto/app/tab_home/components/portfolio_home_paint.dart';
+import 'package:jobisto/app/tab_home/route/home_route.dart';
 import 'package:jobisto/app/tab_orders/domain/dummy_models/portfolios_model.dart';
 import 'package:jobisto/utils/utils.dart';
 class PortfoliosWidget extends StatelessWidget {
@@ -12,7 +14,7 @@ class PortfoliosWidget extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          MenuRoute.goToJobDoneDetailsPage(context);
+          TabHomeRoute.goToPortfolioHomePaintPage(context);
         },
         child: Container(
           margin: EdgeInsets.only(left: 10.sp),

@@ -52,6 +52,7 @@ class Routes {
     TabHomeRoute.createJobScreenRoute:(context) => TabHomeRoute.createJobScreenChild,
     TabHomeRoute.requirementScreenRoute:(context) => TabHomeRoute.requirementScreenChild,
     TabHomeRoute.takeTheJobScreenRoute:(context) => TabHomeRoute.takeTheJobScreenChild,
-    TabHomeRoute.jobConfirmedScreenRoute:(context) => TabHomeRoute.jobConfirmedScreenChild
+    TabHomeRoute.jobConfirmedScreenRoute:(context) => TabHomeRoute.jobConfirmedScreenChild,
+    TabHomeRoute.portfolioHomePaintRoute:(context) => TabHomeRoute.portfolioHomePaintChild
   };
 }

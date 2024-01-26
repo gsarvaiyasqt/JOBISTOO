@@ -34,9 +34,13 @@ class TabOrderRoute{
 }
 class JobsServiceData{
 
+  String? image;
   JOBSTYPE? jobstype;
   STATUSTYPE? statustype;
-  JobsServiceData({this.statustype,this.jobstype});
+  String? text1;
+  String? text2;
+  String? category;
+  JobsServiceData({this.statustype,this.jobstype,this.category,this.image,this.text1,this.text2});
 
 }
 

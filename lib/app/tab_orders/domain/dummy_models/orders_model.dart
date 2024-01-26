@@ -19,7 +19,8 @@ class OrdersClass{
       category: "Plumbing",
       price: 50.00,
       jobsServiceData: JobsServiceData(
-        jobstype: JOBSTYPE.BUSINESS
+        jobstype: JOBSTYPE.BUSINESS,
+        image: "assets/images/icons/plumbing_profile.svg"
       ),
       date: "1 Nov ‘23",
     ),
@@ -32,7 +33,10 @@ class OrdersClass{
         price: 45.00,
         jobsServiceData: JobsServiceData(
           jobstype: JOBSTYPE.JOBS,
-          statustype: STATUSTYPE.PENDING
+          statustype: STATUSTYPE.PENDING,
+          image: "assets/images/dummy_img/ac_image.svg",
+          text1: "I DO ELECTRICITY",
+          text2: "Ke teng"
         ),
         date: "5 Nov ‘23"
     ),
@@ -44,8 +48,11 @@ class OrdersClass{
         category: "AC Service",
         price: 99.00,
         jobsServiceData: JobsServiceData(
+            image: "assets/images/dummy_img/ac_image.svg",
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            text1: "I DO ELECTRICITY",
+            text2: "Ke teng"
         ),
         date: "23 Nov ‘23"
     ),
@@ -55,7 +62,8 @@ class OrdersClass{
         category: "Pipe Repairing and Fittings",
         jobsServiceData: JobsServiceData(
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            image: "assets/images/icons/plumbing_profile.svg"
         ),
         price: 28.00,
         date: "1 Nov ‘23"
@@ -66,7 +74,11 @@ class OrdersClass{
         category: "Cleaning",
         jobsServiceData: JobsServiceData(
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            image: "assets/images/dummy_img/ac_image.svg",
+            text1: "I DO ELECTRICITY",
+            text2: "Ke teng"
+
         ),
         price: 59.00,
         date: "1 Nov ‘23"
@@ -76,7 +88,10 @@ class OrdersClass{
         request: "Requested for",
         jobsServiceData: JobsServiceData(
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            image: "assets/images/icons/plumbing_profile.svg",
+            text1: "I DO ELECTRICITY",
+            text2: "Ke teng"
         ),
         category: "Pipe Repairing and Fittings",
         price: 99.00,
@@ -91,7 +106,11 @@ class OrdersClass{
         price: 45.00,
         jobsServiceData: JobsServiceData(
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            image: "assets/images/dummy_img/ac_image.svg",
+            text1: "I DO ELECTRICITY",
+            text2: "Ke teng"
+
         ),
         date: "5 Nov ‘23"
     ),
@@ -103,7 +122,8 @@ class OrdersClass{
         category: "AC Service",
         jobsServiceData: JobsServiceData(
             jobstype: JOBSTYPE.JOBS,
-            statustype: STATUSTYPE.COMPLETED
+            statustype: STATUSTYPE.COMPLETED,
+            image: "assets/images/icons/plumbing_profile.svg"
         ),
         price: 99.00,
         date: "23 Nov ‘23"

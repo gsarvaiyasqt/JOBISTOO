@@ -160,9 +160,11 @@ class _MyJobistoProfileState extends State<MyJobistoProfile> {
                       height: 54.sp,
                       padding:  EdgeInsets.symmetric(horizontal: 20.sp),
                       child: CustomButton(
-                        btnText: "Next",
+                        
+                        btnText: "Update",
                         textStyle: CustomTextStyle.blackSemiBoldFont16Style,
                         onTap: (){
+                          Navigator.pop(context);
                         },
                       ),
                     ),
