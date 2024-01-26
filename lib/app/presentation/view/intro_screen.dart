@@ -11,10 +11,28 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
+
+  Offset offset = Offset(10, 0);
+
+  GlobalKey swipeWidgetKey = GlobalKey();
+
+  Size? getSwipeWidgetSize() {
+    final State? state = swipeWidgetKey.currentState;
+    //returns null:
+    final BuildContext? context = swipeWidgetKey.currentContext;
+
+    //Error: The getter 'context' was called on null.
+    final RenderBox? box = state?.context.findRenderObject() as RenderBox?;
+
+    return box?.size;
+
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       extendBody: true,
       body: CustomBackGround(
@@ -49,46 +67,93 @@ class _IntroScreenState extends State<IntroScreen> {
 
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 20.sp),
-              child: InkWell(
-                onTap: () {
-                  AuthRoute.goToLoginPage(context);
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: kDarkGreyColor,
-                      borderRadius: BorderRadius.circular(100.sp)
-                  ),
-                  padding: EdgeInsets.fromLTRB(49.sp, 5.sp, 5.sp, 5.sp),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final width = constraints.maxWidth;
+                  return GestureDetector(
+                    onHorizontalDragEnd: (details) async {
+                      // Haptic
+                      final middle = MediaQuery.sizeOf(context).width/2;
+                      if (offset.dx > middle) {
+                        final boxWidth = getSwipeWidgetSize()?.width ?? 50;
+                        final dx = width - (boxWidth);
+                        setState(() {
+                          offset = Offset(dx, 0);
+                        });
+                        // Go to next screen
+                        await Future.delayed(const Duration(milliseconds: 100));
+                        AuthRoute.goToLoginPage(context);
+                      } else {
+                        setState(() {
+                          offset = Offset(10, 0);
+                        });
+                      }
+                    },
+                    onHorizontalDragUpdate: (details) {
+                      setState(() {
 
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 17.sp),
-                        child: Text("Swipe to get started",style: CustomTextStyle.regularFont16Style,),
-                      ),
+                        final height = getSwipeWidgetSize()?.height ?? 50;
+                        final boxWidth = height - (20.sp);
+                        final maxDx = width - (10.sp + boxWidth);
 
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.sp),
-                        child: SizedBox(
-                            height: 24.sp,
-                            width: 40.sp,
-                            child: ImageUtil.iconImageClass.swipeIcon),
-                      ),
+                        if(details.localPosition.dx < 10){
+                          offset = Offset(10, 0);
+                        } else if(details.localPosition.dx > maxDx) {
+                          offset = Offset(maxDx, 0);
+                        } else {
+                          offset = details.localPosition;
+                        }
 
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100.sp),
-                          color: kPrimaryColor,
+                      });
+                    },
+                    child: Stack(
+                      children: [
+
+                        Container(
+                          decoration: BoxDecoration(
+                              color: kDarkGreyColor,
+                              borderRadius: BorderRadius.circular(100.sp)
+                          ),
+                          padding: EdgeInsets.fromLTRB(49.sp, 5.sp, 5.sp, 5.sp),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+
+                              Padding(
+                                padding: EdgeInsets.symmetric(vertical: 17.sp),
+                                child: Text("Swipe to get started",style: CustomTextStyle.regularFont16Style,),
+                              ),
+
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20.sp),
+                                child: SizedBox(
+                                    height: 24.sp,
+                                    width: 40.sp,
+                                    child: ImageUtil.iconImageClass.swipeIcon),
+                              ),
+
+                            ],
+                          ),
                         ),
-                        padding: EdgeInsets.all(10.sp),
-                        child: SizedBox(
-                            child: ImageUtil.iconImageClass.crossArrowIconMain),
-                      ),
 
-                    ],
-                  ),
-                ),
+                        Positioned(
+                          top: 10.sp,
+                          left: offset.dx,
+                          child: Container(
+                            key: swipeWidgetKey,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100.sp),
+                              color: kPrimaryColor,
+                            ),
+                            padding: EdgeInsets.all(10.sp),
+                            child: SizedBox(
+                                child: ImageUtil.iconImageClass.crossArrowIconMain),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
 

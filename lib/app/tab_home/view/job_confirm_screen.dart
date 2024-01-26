@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jobisto/app/tab/route/tab_route.dart';
 import 'package:jobisto/app/tab_home/components/custom_job_confirmed_background.dart';
 import 'package:jobisto/base/common_components/custom/custom_button.dart';
 import 'package:jobisto/utils/utils.dart';
+import 'package:provider/provider.dart';
+
+import '../../tab/view_model/dashboard_provider.dart';
 
 class JobConfirmScreen extends StatefulWidget {
   const JobConfirmScreen({super.key});
@@ -13,6 +17,7 @@ class JobConfirmScreen extends StatefulWidget {
 class _JobConfirmScreenState extends State<JobConfirmScreen> {
   @override
   Widget build(BuildContext context) {
+    final tabProvider = context.read<TabIndexProvider>();
     return Scaffold(
       body: CustomJobConfirmedBackGround(
         childBody: Column(
@@ -45,7 +50,9 @@ class _JobConfirmScreenState extends State<JobConfirmScreen> {
               padding: EdgeInsets.symmetric(horizontal: 20.sp),
               child: CustomButton(
                 onTap: () {
-                  Navigator.pop(context);
+                  TabRoute.goToTabPage(context);
+                  tabProvider.tabChangeIndex(index: 2);
+
                 },
                 btnText: "Done",
                 textStyle: CustomTextStyle.semiBoldFont16Style.copyWith(color: kBlackColor),

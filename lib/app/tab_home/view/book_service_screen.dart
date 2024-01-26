@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobisto/app/tab_home/components/booking_service_list_component.dart';
 import 'package:jobisto/app/tab_home/domain/dummy_models/booker_service_model.dart';
 import 'package:jobisto/app/tab_home/route/home_route.dart';
@@ -118,7 +119,7 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
                       SizedBox(
                         height: 24.sp,
                         width: 24.sp,
-                        child: ImageUtil.iconImageClass.addIcon,
+                        child:  SvgPicture.asset("$iconPath/add.svg",colorFilter: ColorFilter.mode(kBlackColor,BlendMode.srcIn)),
                       ),
           
                       SizedBox(width: 10.sp,),
