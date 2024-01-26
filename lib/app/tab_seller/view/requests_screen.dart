@@ -165,20 +165,35 @@ class _RequestScreenState extends State<RequestScreen> {
                           color: kPrimaryColor.withOpacity(0.25),
                         ),
 
-                       Row(
-                         children: [
-
-                           SizedBox(
-                             height: 16.sp,
-                             width: 16.sp,
-                             child: ImageUtil.iconImageClass.calendarIcon,
-                           ),
-
-                           SizedBox(width: 6.sp,),
-
-                           Text(requestList.date ?? "",style: CustomTextStyle.regularFont12Style,)
-
-                         ],
+                       Expanded(
+                         child: Row(
+                           children: [
+                         
+                             Expanded(
+                               child: Row(
+                                 children: [
+                         
+                                   SizedBox(
+                                     height: 16.sp,
+                                     width: 16.sp,
+                                     child: ImageUtil.iconImageClass.calendarIcon,
+                                   ),
+                         
+                                   SizedBox(width: 6.sp,),
+                         
+                                   Text(requestList.date ?? "",style: CustomTextStyle.regularFont12Style,)
+                         
+                                 ],
+                               ),
+                             ),
+                         
+                             SizedBox(
+                               height: 24.sp,
+                               width: 24.sp,
+                               child: ImageUtil.iconImageClass.crossArrowIcon,
+                             )
+                           ],
+                         ),
                        )
                       ],
                     )

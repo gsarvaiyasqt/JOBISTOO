@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:jobisto/app/tab_home/components/portfolio_home_paint.dart';
 import 'package:jobisto/app/tab_home/view/book_service_details_screen.dart';
 import 'package:jobisto/app/tab_home/view/book_service_screen.dart';
 import 'package:jobisto/app/tab_home/view/create_job_screen.dart';
@@ -19,6 +20,7 @@ class TabHomeRoute{
   static String requirementScreenRoute = "/requirementRoute";
   static String takeTheJobScreenRoute = "/takeTheJobScreenRoute";
   static String jobConfirmedScreenRoute = "/jobConfirmedScreenRoute";
+  static String portfolioHomePaintRoute = "/portfolioHomePaintRoute";
 
   static Widget get topJobDetailsChild => const TopJobDetailsScreen();
   static Widget get bookServiceDetailsChild => const BookServiceDetailsScreen();
@@ -28,6 +30,7 @@ class TabHomeRoute{
   static Widget get requirementScreenChild => const RequirementScreen();
   static Widget get takeTheJobScreenChild => const TakeTheJobScreen();
   static Widget get jobConfirmedScreenChild => const JobConfirmScreen();
+  static Widget get portfolioHomePaintChild => PortfolioHomePaint();
 
 
   static goToTopJobDetailsPage(BuildContext context){
@@ -60,5 +63,9 @@ class TabHomeRoute{
 
   static goToJobConfirmedPage(BuildContext context){
     Navigator.of(context).pushNamed(jobConfirmedScreenRoute);
+  }
+
+  static goToPortfolioHomePaintPage(BuildContext context){
+    Navigator.of(context).pushNamed(portfolioHomePaintRoute);
   }
 }

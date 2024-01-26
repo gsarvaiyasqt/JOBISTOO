@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobisto/app/auth/route/auth_route.dart';
 import 'package:jobisto/app/tab_settings/components/custom_settings_background.dart';
 import 'package:jobisto/app/tab_settings/domain/models/settings_model.dart';
 import 'package:jobisto/app/tab_settings/route/tab_settings_route.dart';
@@ -141,6 +142,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   SizedBox(height: 10.sp,),
               
                   CustomButton(
+                    onTap: () {
+                      AuthRoute.goToLoginPage(context);
+                    },
                     btnColor: kLightGrayColor.withOpacity(0.16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

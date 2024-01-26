@@ -31,7 +31,7 @@ class _SellerScreenState extends State<SellerScreen> {
               style: CustomTextStyle.semiBoldFont20Style,
               textAlign: TextAlign.center,
             )),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 TabSellerRoute.goToManageJobPage(context);
               },

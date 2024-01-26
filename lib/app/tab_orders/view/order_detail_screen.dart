@@ -141,8 +141,10 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
         backgroundColor: kBlackColor,
         appBar: CustomJabAppbar(
           height: 226.sp,
-          image: ImageUtil.iconImageClass.plumbingProfileIcon,
+          image: SvgPicture.asset(jobsServiceData.image ?? ""),
           actionIcon: jobsServiceData.jobstype == JOBSTYPE.BUSINESS ?  ImageUtil.iconImageClass.edit : null,
+          text1: jobsServiceData.text1,
+          text2: jobsServiceData.text2,
         ),
         body: Stack(
           children: [
@@ -155,8 +157,9 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(child: Text("Plumbing",style: CustomTextStyle.primaryTextColorFont22W600,)),
+                          Expanded(child: Text(jobsServiceData.category ?? "",style: CustomTextStyle.primaryTextColorFont22W600,)),
                           if(jobsServiceData.statustype == STATUSTYPE.COMPLETED)
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,

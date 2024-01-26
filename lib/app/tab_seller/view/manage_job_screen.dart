@@ -49,10 +49,10 @@ class _ManageJobsScreenState extends State<ManageJobsScreen> with SingleTickerPr
               Expanded(
                 child: IndexedStack(
                   index: currentIndex,
-                  children: [
+                  children: const [
                     RequestScreen(),
-                    Text("data"),
-                    Text("data")
+                    RequestScreen(),
+                    RequestScreen()
                   ],
                 ),
               )

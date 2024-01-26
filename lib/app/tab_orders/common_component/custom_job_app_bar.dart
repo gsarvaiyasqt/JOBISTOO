@@ -6,7 +6,9 @@ class CustomJabAppbar extends StatelessWidget implements PreferredSizeWidget{
   final double? height;
   final Widget? actionIcon;
   final Widget? image;
-  const CustomJabAppbar({Key? key, this.height, this.actionIcon,this.image}) : super(key: key);
+  final String? text1;
+  final String? text2;
+  const CustomJabAppbar({Key? key, this.height, this.actionIcon,this.image, this.text1, this.text2}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +63,28 @@ class CustomJabAppbar extends StatelessWidget implements PreferredSizeWidget{
             ),
           ),
 
-          Center(
-            child: SizedBox(
-                height: 144.sp,
-                width: 144.sp,
-                child: image),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                  height: 144.sp,
+                  width: 144.sp,
+                  child: image),
+
+              if(text2 != null)
+              SizedBox(width: 30.sp,),
+
+              if(text2 != null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(text1 ?? "",style: CustomTextStyle.regularFont14Style.copyWith(color: kBlackColor),),
+                  Text(text2 ?? "",style: CustomTextStyle.semiBoldFont22Style.copyWith(color: kBlackColor,fontSize: 24.sp),)
+                ],
+              )
+            ],
           )
         ],
       ),

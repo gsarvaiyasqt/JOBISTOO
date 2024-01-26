@@ -233,13 +233,16 @@ class _JobRequestScreenState extends State<JobRequestScreen> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.sp),
               height: 100.sp,
-              child: const Row(
+              child: Row(
                 children: [
 
                   Expanded(
                     child: CustomAcceptAndRejectButton(
                       rejectText: "Reject",
                       acceptText: "Accept",
+                      onRejectTap: () {
+                        Navigator.pop(context);
+                      },
                     ),
                   ),
 

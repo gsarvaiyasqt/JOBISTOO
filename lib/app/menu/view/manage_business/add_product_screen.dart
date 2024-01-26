@@ -38,7 +38,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     onTap: (){
                       Navigator.pop(context);
                     },
-                    centerText: "My Service",
+                    centerText: "Add Service/Product",
                     child: Padding(
                       padding:  EdgeInsets.all(8.0),
                       child: InkWell(
@@ -70,7 +70,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                       children: [
                         Row(
                           children: [
-                            Text("Portfolio Name",style: CustomTextStyle.regularFont16Style,),
+                            Text("Product Name",style: CustomTextStyle.regularFont16Style,),
                             Text("*",style: CustomTextStyle.regularFont16Style.copyWith(color: Colors.red),),
                           ],
                         ),
@@ -78,11 +78,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         SizedBox(height: 10.sp),
 
                         CustomTextField(
-                          name: "Name",
+                          name: "Product Name",
                           textInputAction: TextInputAction.next,
                           inputType: TextInputType.name,
                           controller: nameController,
-                          hint: "Name",
+                          hint: "Product Name",
                           /*  focusNode: mobile,
                                       onEditingComplete:() {
                                         password.requestFocus();
@@ -94,7 +94,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
                         Row(
                           children: [
-                            Text("JOB Detail",style: CustomTextStyle.regularFont16Style,),
+                            Text("Product Detail",style: CustomTextStyle.regularFont16Style,),
                             Text("*",style: CustomTextStyle.regularFont16Style.copyWith(color: Colors.red),),
                           ],
                         ),
@@ -102,12 +102,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         SizedBox(height: 10.sp),
 
                         CustomDescriptionTextField(
-                          name: "Details",
+                          name: "Product Detail",
                           textInputAction: TextInputAction.next,
                           inputType: TextInputType.name,
                           controller: addressController,
                           maxLine: 5,
-                          hint: "Details",
+                          hint: "Product Detail",
                           /*  focusNode: mobile,
                                       onEditingComplete:() {
                                         password.requestFocus();
@@ -119,7 +119,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
                         Row(
                           children: [
-                            Text("Budget",style: CustomTextStyle.regularFont16Style,),
+                            Text("Price",style: CustomTextStyle.regularFont16Style,),
                             Text("*",style: CustomTextStyle.regularFont16Style.copyWith(color: Colors.red),),
                           ],
                         ),
@@ -127,7 +127,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         SizedBox(height: 10.sp),
 
                         CustomTextField(
-                          name: "Budget",
+                          name: "Price",
                           textInputAction: TextInputAction.next,
                           inputType: TextInputType.name,
                           controller: budgetController,
@@ -149,7 +149,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                           },
                           deleteImageOnTap: (val)async{
                           },
-                          headerText: "Upload Logo",
+                          headerText: "Upload Media",
                         ),
                       ]
                     ),
@@ -165,7 +165,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   height: 54.sp,
                   padding:  EdgeInsets.symmetric(horizontal: 20.sp),
                   child: CustomButton(
-                    btnText: "Next",
+                    btnText: "Save",
                     textStyle: CustomTextStyle.blackSemiBoldFont16Style,
                     onTap: (){
                     },
