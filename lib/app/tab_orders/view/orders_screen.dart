@@ -70,7 +70,7 @@ class _OrderScreenState extends State<OrderScreen> with SingleTickerProviderStat
                               width: MediaQuery.sizeOf(context).width / 3,
                               color: kPrimaryColor,
                             )
-                                : SizedBox.shrink(),
+                                : const SizedBox.shrink(),
                           ),
                         ],
                       ),
@@ -81,11 +81,13 @@ class _OrderScreenState extends State<OrderScreen> with SingleTickerProviderStat
                 Expanded(
                   child: TabBarView(
                       controller: tabController,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: const [
+
                         RequestTab(),
-                        Text("data"),
-                        Text("data")
+                        RequestTab(),
+                        RequestTab(),
+
                       ]
                   ),
                 )
